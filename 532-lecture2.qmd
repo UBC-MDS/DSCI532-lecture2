@@ -14,14 +14,27 @@ format:
 ---
 
 ## Lecture 2
-1. How to design a good user experience (UX)?
-2. How to structure your Shiny app? Layouts, tabs, navbar.
-3. How to add themes and style to your Shiny app?
+1. Steps to create a production-grade app
+2. Why is user center design so important?
+3. How to structure your Shiny app? Layouts, tabs, navbar.
+4. How to add themes and style to your Shiny app?
 
 
 ---
 
-## Todays goal
+## Design UI references
+
+Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-Grade Shiny Apps. Chapman and Hall/CRC. 
+
+- [Don't rush into coding](https://engineering-shiny.org/dont-rush-into-coding.html)
+
+-   [UX user experience](https://engineering-shiny.org/ux-matters.html)
+
+-   [Building an "ispum-app"](https://engineering-shiny.org/building-ispum-app.html)
+
+---
+
+## Today's goal
 #### Design and build a Shiny app UI
 
 Chapter 6 - [Layout, themes, HTML](https://mastering-shiny.org/action-layout.html#action-layout) - Mastering Shiny 
@@ -30,37 +43,53 @@ Chapter 6 - [Layout, themes, HTML](https://mastering-shiny.org/action-layout.htm
 
 ## DSCI 532 Overview
 
+![](img/532-overview-2023.png)
 
-# 1. How to design a dashboard? {background-color="#F1FFFA"}
 
+# 1. Steps to create a production-grade app {background-color="#F1FFFA"}
 
 
 ---
 
-## Steps to design a dashboard
+## What is a “production-grade” app?
+These three properties impact two specific groups: users and the developers:
+
+* It is **used**, even if only by one person.
+
+* It is **relied** upon by its user(s).
+
+* It has **real life impact** if something goes wrong.
+
+
+
+
+
+:::footer
+Extracted from [Engineering Production-Grade Shiny Apps book](https://engineering-shiny.org/index.html#what-is-production)]
+:::
+
+---
+
+## The road to a production-grade app
+
+:::{.fragment .highlight-blue}
+1. Motivation and purpose
+2. Select the results/metrics that you want for your target audience
+3. Choose presentation method and interactivity 
+4. Description of your app and sketch
+:::
+5. Write the code of the app following a workflow
+6. Ensure the app's reproducibility and deploy it 
+
 
 ::: footer
 Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
 :::
 
----
-
-## Step 1. Motivation and purpose
-- Get to know well your *Persona*
-- Understand the the data
-- Who are your users?
 
 ---
 
-[Milestone 1](https://pages.github.ubc.ca/mds-2021-22/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html)
-
----
-
-> Our role: Data scientist consultancy firm
-
-> Target audience: Health care administrators
-
-> Situation: Missed medical appointments cost the healthcare system a lot of money and affects the quality of care. If we could understand what factors lead to missed appointments it may be possible to reduce their frequency. To address this challenge, we propose building a data visualization app that allows health care administrators to visually explore a dataset of missed appointments to identify common factors. Our app will show the distribution of factors contributing to appointment show/no show and allow users to explore different aspects of this data by filtering and re-ordering on different variables in order to compare factors that contribute to absence.
+# Why is user center design so important?
 
 ---
 
@@ -77,11 +106,57 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 :::
 
 
-----
 
-## Personas
 
-## **Human center-design** Develop ~~for your users~~ for humans
+# **Step1**. Motivation and purpose  {background-color="#F1FFFA"}
+
+---
+
+## Step 1. Motivation and purpose
+**A.** Get to know well your *Persona* (target audience)
+**B.** Understand the the data
+**C.** Define the research question and usage scenario 
+
+---
+
+## Step 1. Motivation and purpose
+#### A. Get to know well your *Persona* (target audience)
+
+A *persona* is a character that represents the “typical” behavior and traits for a group of users that will interact with your product.
+
+
+![](img/Personas.jpg){fig-align='center'}
+
+
+
+:::footer
+[Building *personas* - Chapter 7 - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/dont-rush-into-coding.html#building-personas)
+:::
+
+
+---
+
+## Step 1. Motivation and purpose
+#### A. Get to know well your *Persona* (target audience)
+
+* While building your application, **you can think about how each persona will interact with a given feature**: 
+   - Will they use it? 
+   - Will they understand it? 
+   - Do we need to add extra information?
+
+:::footer
+[Building *personas* - Chapter 7 - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/dont-rush-into-coding.html#building-personas)
+:::
+
+---
+
+## Step 1. Motivation and purpose
+#### A. Get to know well your *Persona* (target audience)
+
+**Human center-design** 
+
+Develop ~~for your users~~ for humans
+
 
 ::: footer
 [What is Human-center design? (Video)](https://www.youtube.com/watch?v=YnZJ6Dsou0w) Video Spark Works
@@ -89,69 +164,107 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 
 ---
 
-## Step 2. Description of your app and sketch
+## Step 1. Motivation and purpose
+#### B. Understand the data
 
-## Extra: Dashboard Categories 
-
-1.  Tactic
-2.  Operational
-3.  Strategic
-
-::: aside
-Here could be an extra step if you have tro decide the software
-:::
+- Are there missing values?
+- Is there some pre-processing of the data needed?
+- What are the variables we are interested to display?
 
 ---
 
-## A classification  
+## Step 1. Motivation and purpose
+#### B. Understand the data
+**How often the data will be updated?**
 
 
-![](img/pappaetal.png)
+
+| Category    | Purpose                                     | Update frecquency | Interactivity |
+|-------------|---------------------------------------------|-------------------|---------------|
+| Strategic   | See and decide or question                  | Moderate          | Low           |
+| Operational | See and act                                 | High              | Moderate      |
+| Analytical  | See and question, explore what-if scenarios | Low               | High          |
+
+: Dashboard classification
+
+
 
 ::: footer
-Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effective Dashboard Data Visualization. In: Smith, M.J., Salvendy, G. (eds) Human Interface and the Management of Information. Interacting with Information. Human Interface 2011. Lecture Notes in Computer Science, vol 6771. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-21793-7_29
+Modified from: [Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effective Dashboard Data Visualization. In: Smith, M.J., Salvendy, G. (eds) Human Interface and the Management of Information. Interacting with Information. Human Interface 2011. Lecture Notes in Computer Science, vol 6771. Springer, Berlin, Heidelberg.]( https://doi.org/10.1007/978-3-642-21793-7_29)
 :::
 
----
-
-## Step 3. Create a list of results/metrics that you want to include in the dashboard in relation to your target audience/objectives
-
-
-Create a List of KPIs and Metrics for Each Strategic Objective and select the most appropriated ones
-
-KPIs are SMART (Specific, Measurable, Achievable, Result-oriented, and Time- bound)
 
 ---
 
-![](img/kpi-strategic.png)
+## Step 1. Motivation and purpose
+#### C. Define the research question and usage scenario.
+
+- [Milestone 1](https://pages.github.ubc.ca/mds-2022-23/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html)
+
+---
+
+# Step 2. Select the results/metrics that you want for your target audience
+
+---
+
+## Step 2. Select the results/metrics that you want for your target audience
+
+For example, 
+
+* "Percentage of completion of product"   
+* "Revenue increase (%) by year"   
+* "Number of daily COVID-19 cases by country"   
+* "Percentage of reduction of COVID-19 cases"   
 
 ::: footer
-Image from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
+Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
 :::
-
-------------------------------------------------------------------------
-
-![](img/kpi-tactical.png) 
-
-::: footer Image from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons. :::
-
-------------------------------------------------------------------------
-
-## Step 4. Choose Presentation Method and Interactivity 
-
-**i. Gather all components available.**
-
--   Plots (what library use?)
--   Gauges
--   Traffic lights, arrows, and other indicators
--   Alerts / Notifications
--   Maps
 
 ---
 
-## Plots
+# Step 3. Choose presentation method and interactivity 
 
-Could not be interactive too
+---
+
+## Step 3. Choose presentation method and interactivity 
+
+**A.** Components (plots, maps, notifications, text).
+**B.** Design dashboard layout.
+
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+
+For example:
+
+* "Percentage of completion of product" **-> Plot**  
+  
+* "revenue increase (%) by year" **-> Plot**  
+  
+* "Number of daily COVID-19 cases by country" **-> Map**  
+  
+* "Percentage of reduction of COVID-19 cases" **-> Text**
+
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+**What library to use to include...?**
+* Plots   
+* Gauges  
+* Alerts / Notifications  
+* Maps  
+* Text boxes 
+* Reports  
+
+
+---
+
+## Plots 
+We are going to learn more in future lectures
+
+- Could not be interactive too
 - [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
 - [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
 
@@ -169,7 +282,7 @@ Could not be interactive too
 ## Plots
 ##### Thresholds / period selection
 
-![](img/example-plot-line.png)
+![](img/example-plot-line.png){fig-align='center'}
 
 ::: footer
 [`Customized Data Visualization in ggplot2` - Allison Horst](https://allisonhorst.github.io/eds221-day8-comp/data_viz.html)
@@ -179,83 +292,46 @@ Could not be interactive too
 
 ## Maps
 
-```r
+ "Number of daily COVID cases by province" -> **Map** -> **`leaflet` library**
 
-```
+*"Using this library we can add labels that will be revealed when the user interacts with the app..."*
 
-- `leafleat`
+- [COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384)
+
+
+
+
+## Step 3. Choose presentation method and interactivity 
+#### B. Desing dashboard layout
+-   Accessibility
+-   Fonts and size
+-   Colors / themes
 
 ---
 
-![Shinyalert](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
-
-![`Shinyalert` package](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
-
-------------------------------------------------------------------------
-
-## Step 4. Choose Presentation Method and Interactivity 
-
-**ii. Design dashboard layout.**
-
--   Accesibility
--   Fonts and size
--   Colors
+## Step 3. Choose presentation method and interactivity 
+#### B. Desing dashboard layout
 -   Do we need more than one dashboard?
 -   Are components that can be collapsed / expanded?
+-   Titles, subtitles, labels
 
 > **Does the organization has a particular color and layout scheme desired for the dashboards?**
 
 
 
----
-
-**iii. Assign dashboard title and component labels**
-
----
-
-**iv. Specify core dashboard functionality**
+# **Step 4**. Description of your app and sketch {background-color="#F1FFFA"}
 
 
 ---
 
 ![](img/sketch.png)
 
----
-
-## Inspiration
-
-It is always a good idea to check examples
-
-- [Shiny Gallery]()
 
 ---
 
-## Step 5. Create the dashboard 
-
-
----
-
-# Some messages 
+# App design: Some final messages
 
 ---
-
-# UI Design
-
-## Don't Rush into Coding
-
-#### Prototyping is crucial
-
-> Prototyping first may help keep you from investing far too much time for marginal gains.
->
-> The Art of UNIX Programming (Raymond 2003) "Rule of Optimization: Prototype before polishing. Get it working before you optimize it."
-
-::: footer
-[Building an "ipsum-app" - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/building-ispum-app.html)
-:::
-
-
-
-------------------------------------------------------------------------
 
 # **Simplicity** is gold
 
@@ -264,11 +340,11 @@ It is always a good idea to check examples
 :::
 
 
-------------------------------------------------------------------------
+---
 
 # UIs should be as **self-explanatory** as possible
 
-- Add lables, titles, notes for the users.
+Add labels, titles, notes for the users.
 
 ::: footer
 [UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
@@ -287,13 +363,14 @@ It is always a good idea to check examples
 :::
 
 --
+
 # Rule of Least Surprise
 
-When we are browsing the web, we have a series of pre-conceptions about what things are and what they do.
+When we are browsing the web, **we have a series of pre-conceptions** about what things are and what they do.
 
 . . .
 
-For example, we expect an underline text to be clickable, so there is a good chance that if you use underlined text in your app, the user will try to click on it. Usually, the link is also colored differently from the rest of the text.
+For example, **we expect an underline text to be clickable**, so there is a good chance that if you use underlined text in your app, the user will try to click on it. 
 
 ::: footer
 [UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
@@ -301,29 +378,38 @@ For example, we expect an underline text to be clickable, so there is a good cha
 
 ---
 
-## Step 6. Prodution-grade app: ensure the reproducibility and deploy the app.
-- Testing
-- Dockerfile
-- CI/CD
-- Documentation
-- Performance
-- Deployment
+# Questions? Break!
 
-------------------------------------------------------------------------
-
-## References
-
-Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-Grade Shiny Apps. Chapman and Hall/CRC. 
-
-- [Don't rush into coding](https://engineering-shiny.org/dont-rush-into-coding.html)
-
--   [UX user experience](https://engineering-shiny.org/ux-matters.html)
-
--   [Building an "ispum-app"](https://engineering-shiny.org/building-ispum-app.html)
+---
 
 
+# 2. How to structure the UI of your Shiny app?  {background-color="#F1FFFA"}
+- [COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384)
 
-# 2. How to structure your Shiny app? Layouts, tabs, navbar. {background-color="#F1FFFA"}
+---
+
+## Layouts
+
+- **Single page layouts** `fluidPage()`
+  - Page with sidebar   
+    - `sidebarLayout()` 
+    - `mainPanel()` 
+    - `sidebarPanel()`
+  - Multi-row 
+    - `fluidRow()` 
+    - `column()`
+
+---
+
+## Layouts
+
+- **Multi-page layouts**  
+  - Tabsets 
+   - `tabsetPanel()`
+   - `tabPanel()`
+  - Navbars
+   - `navbarPage()`
+   - `navbarMenu()`
 
 ---
 
@@ -331,25 +417,145 @@ Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-
 
 ![](img/layout.png)
 
+:::footer
+Shiny Cheat-sheet
+:::
 
 ---
+
+## Single page layout
+#### Structure of a basic app with a sidebar
+
+![](img/sidebar.png)
+
+---
+
+## Single page layout
+#### The structure underlying a simple multi-row app 
+
+
+![](img/multirow.png)
+
+**Each row is made up of 12 columns** and the first argument to `column()` gives how many of those columns to occupy.
+
+---
+
 ## NavbarPage
 
+```{r eval=FALSE, include=TRUE}
+ui <- navbarPage(
+  "Page title",   
+  tabPanel("panel 1", "one"),
+  tabPanel("panel 2", "two"),
+  tabPanel("panel 3", "three"),
+  navbarMenu("subpanels", 
+    tabPanel("panel 4a", "four-a"),
+    tabPanel("panel 4b", "four-b"),
+    tabPanel("panel 4c", "four-c")
+  )
+)
+```
+
+
+
+# DEMO: Sidebar, tabs and navbar {background-color="#F1FFFA"}
+
+
+# 3. How to add themes and style to your Shiny app? {background-color="#F1FFFA"}
+
 ---
 
-## Tabs
+## Themes
+#### `bslib` package
 
-![](img/tabs.png)
+```{r eval=FALSE, include=TRUE}
+fluidPage(
+  theme = bslib::bs_theme(...)
+)
+```
+
+---
+
+## You can select your own theme!
+
+Use the function `bslib::bs_theme_preview()` to define your theme interactively
+
+```{r eval=FALSE, include=TRUE}
+theme <- bslib::bs_theme(
+  bg = "#0b3d91", 
+  fg = "white", 
+  base_font = "Source Sans Pro"
+)
+```
 
 ---
 
-# DEMO: Add navbarPage, layouts and tabs.
+## Themes
+#### `thematic` package
+
+For plots you can use `thematic` package adding `thematic_shiny()` 
+
+```{r eval=FALSE, include=TRUE}
+ library(ggplot2)
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(bootswatch = "darkly"),
+  titlePanel("A themed plot"),
+  plotOutput("plot"),
+)
+
+server <- function(input, output, session) {
+  thematic::thematic_shiny()
+  
+  output$plot <- renderPlot({
+    ggplot(mtcars, aes(wt, mpg)) +
+      geom_point() +
+      geom_smooth()
+  }, res = 96)
+}
+
+
+```
 
 ---
-## Other possibilities more customized
+
+## Learning outcomes {background-color="#FED9B7"}
+
+1.  Recognize the importance of user center design when developing a dashboard
+
+2.  Implement the six steps to design an app
+
+3.  Build the user interface of a Shiny app using single and multi-page layouts
+
+4.  Customize the Shiny app appearance using boostrap themes 
+
+5.  Design a prototype of an app the user's needs creating personas profiles
+---
+
+# Questions?
 
 
 ---
+
+
+![`Shinyalert` package](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
+![Shinyalert](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
+---
+
+# UI Design
+
+## Don't Rush into Coding
+
+#### Prototyping is crucial
+
+> Prototyping first may help keep you from investing far too much time for marginal gains.
+>
+> The Art of UNIX Programming (Raymond 2003) "Rule of Optimization: Prototype before polishing. Get it working before you optimize it."
+
+::: footer
+[Building an "ipsum-app" - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/building-ispum-app.html)
+:::
+--
 
 ## Boostrap
 
@@ -368,38 +574,3 @@ knitr::include_graphics("img/boostrap.png")
 ::: footer
 [`dash-bootstrap-components` documentation](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/) / [Video Charming data](https://www.youtube.com/watch?v=0mfIK8zxUds)
 :::
-
-# 3. How to add themes and style to your Shiny app? {background-color="#F1FFFA"}
-
----
-
-## `bslib` package
-
-Bootstrap themes
-
----
-
-## CSS stylesheet
-
----
-
-## Other considerations about color palettes for plots
-
-
----
-
-## Learning outcomes {background-color="#FED9B7"}
-
-1.  Recognize the importance of user center design when developing a dashboard
-
-2.  Reflect about differences in the design
-
-3.  Customize the app appearance using boostrap themes
-
-4.  Understand the user's needs creating personas profiles
-
-5.  Design a prototype of an app
-
----
-
-# Questions?

@@ -22,70 +22,6 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="532-lecture2_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="532-lecture2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -392,53 +328,70 @@
 <section id="lecture-2" class="slide level2">
 <h2>Lecture 2</h2>
 <ol type="1">
-<li class="fragment">How to design a good user experience (UX)?</li>
+<li class="fragment">Steps to create a dashboard</li>
 <li class="fragment">How to structure your Shiny app? Layouts, tabs, navbar.</li>
 <li class="fragment">How to add themes and style to your Shiny app?</li>
 </ol>
 </section>
+<section id="design-ui-references" class="slide level2">
+<h2>Design UI references</h2>
+<p>Fay, C., Rochette, S., Guyader, V., &amp; Girard, C. (2021). Engineering Production-Grade Shiny Apps. Chapman and Hall/CRC.</p>
+<ul>
+<li class="fragment"><p><a href="https://engineering-shiny.org/dont-rush-into-coding.html">Don’t rush into coding</a></p></li>
+<li class="fragment"><p><a href="https://engineering-shiny.org/ux-matters.html">UX user experience</a></p></li>
+<li class="fragment"><p><a href="https://engineering-shiny.org/building-ispum-app.html">Building an “ispum-app”</a></p></li>
+</ul>
+</section>
 <section id="todays-goal" class="slide level2">
-<h2>Todays goal</h2>
+<h2>Today’s goal</h2>
 <h4 id="design-and-build-a-shiny-app-ui">Design and build a Shiny app UI</h4>
 <p>Chapter 6 - <a href="https://mastering-shiny.org/action-layout.html#action-layout">Layout, themes, HTML</a> - Mastering Shiny</p>
 </section>
 <section id="dsci-532-overview" class="slide level2">
 <h2>DSCI 532 Overview</h2>
-</section>
+
+<img data-src="img/532-overview-2023.png" class="r-stretch"></section>
 <section>
-<section id="how-to-design-a-dashboard" class="title-slide slide level1 center" data-background-color="#F1FFFA">
-<h1>1. How to design a dashboard?</h1>
+<section id="steps-to-create-a-production-grade-app" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1>1. Steps to create a production-grade app</h1>
 
 </section>
-<section id="steps-to-design-a-dashboard" class="slide level2">
-<h2>Steps to design a dashboard</h2>
+<section id="what-is-a-production-grade-app" class="slide level2">
+<h2>What is a “production-grade” app?</h2>
+<p>These three properties impact two specific groups: users and the developers:</p>
+<ul>
+<li class="fragment"><p>It is <strong>used</strong>, even if only by one person.</p></li>
+<li class="fragment"><p>It is <strong>relied</strong> upon by its user(s).</p></li>
+<li class="fragment"><p>It has <strong>real life impact</strong> if something goes wrong.</p></li>
+</ul>
+<div class="footer">
+<p>Extracted from <a href="https://engineering-shiny.org/index.html#what-is-production">Engineering Production-Grade Shiny Apps book</a>]</p>
+</div>
+</section>
+<section id="the-road-to-a-production-grade-app" class="slide level2">
+<h2>The road to a production-grade app</h2>
+<div class="fragment highlight-blue">
+<ol type="1">
+<li class="fragment">Motivation and purpose</li>
+<li class="fragment">Select the results/metrics that you want to include in relation to your target audience</li>
+<li class="fragment">Choose presentation method and interactivity</li>
+<li class="fragment">Description of your app and sketch</li>
+</ol>
+</div>
+<ol start="5" type="1">
+<li class="fragment">Write the code of the app following a workflow</li>
+<li class="fragment">Ensure the app’s reproducibility and deploy it</li>
+</ol>
 <div class="footer">
 <p>Adapted from: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons.</p>
 </div>
 </section>
-<section id="step-1.-motivation-and-purpose" class="slide level2">
-<h2>Step 1. Motivation and purpose</h2>
-<ul>
-<li class="fragment">Get to know well your <em>Persona</em></li>
-<li class="fragment">Understand the the data</li>
-<li class="fragment">Who are your users?</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p><a href="https://pages.github.ubc.ca/mds-2021-22/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html">Milestone 1</a></p>
-</section>
-<section class="slide level2">
-
-<blockquote>
-<p>Our role: Data scientist consultancy firm</p>
-</blockquote>
-<blockquote>
-<p>Target audience: Health care administrators</p>
-</blockquote>
-<blockquote>
-<p>Situation: Missed medical appointments cost the healthcare system a lot of money and affects the quality of care. If we could understand what factors lead to missed appointments it may be possible to reduce their frequency. To address this challenge, we propose building a data visualization app that allows health care administrators to visually explore a dataset of missed appointments to identify common factors. Our app will show the distribution of factors contributing to appointment show/no show and allow users to explore different aspects of this data by filtering and re-ordering on different variables in order to compare factors that contribute to absence.</p>
-</blockquote>
+<section id="the-road-to-a-production-grade-app-1" class="slide level2">
+<h2>The road to a production-grade app</h2>
+<p><strong>Today’s lecture: design</strong> :::{.fragment .highlight-blue} 1. Motivation and purpose 2. Description of your app and sketch 3. Select the results/metrics that you want to include in relation to your target audience 4. Choose presentation method and interactivity ::: 5. Write the code of the app following a workflow <strong>(lecture 3)</strong> 6. Ensure the app’s reproducibility and deploy it <strong>(lecture 7 and 8)</strong></p>
+<div class="footer">
+<p>Adapted from: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons.</p>
+</div>
 </section>
 <section id="develop-for-your-users" class="slide level2">
 <h2>Develop for your users</h2>
@@ -453,69 +406,174 @@
 <p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
 </div>
 </div>
+</section></section>
+<section>
+<section id="step1.-motivation-and-purpose" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1><strong>Step1</strong>. Motivation and purpose</h1>
+
 </section>
-<section id="personas" class="slide level2">
-<h2>Personas</h2>
+<section id="step-1.-motivation-and-purpose" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<p><strong>A.</strong> Get to know well your <em>Persona</em> (target audience) <strong>B.</strong> Understand the the data <strong>C.</strong> Research question and usage scenario</p>
 </section>
-<section id="human-center-design-develop-for-your-users-for-humans" class="slide level2">
-<h2><strong>Human center-design</strong> Develop <del>for your users</del> for humans</h2>
+<section id="step-1.-motivation-and-purpose-1" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="a.-get-to-know-well-your-persona-target-audience">A. Get to know well your <em>Persona</em> (target audience)</h4>
+<p>A <em>persona</em> is a character that represents the “typical” behavior and traits for a group of users that will interact with your product.</p>
+
+<img data-src="img/Personas.jpg" class="r-stretch quarto-figure-center"><div class="footer">
+<p><a href="https://engineering-shiny.org/dont-rush-into-coding.html#building-personas">Building <em>personas</em> - Chapter 7 - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+</section>
+<section id="step-1.-motivation-and-purpose-2" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="a.-get-to-know-well-your-persona-target-audience-1">A. Get to know well your <em>Persona</em> (target audience)</h4>
+<ul>
+<li class="fragment">While building your application, <strong>you can think about how each persona will interact with a given feature</strong>:
+<ul>
+<li class="fragment">Will they use it?</li>
+<li class="fragment">Will they understand it?</li>
+<li class="fragment">Do we need to add extra information?</li>
+</ul></li>
+</ul>
+<div class="footer">
+<p><a href="https://engineering-shiny.org/dont-rush-into-coding.html#building-personas">Building <em>personas</em> - Chapter 7 - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+</section>
+<section id="step-1.-motivation-and-purpose-3" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="a.-get-to-know-well-your-persona-target-audience-2">A. Get to know well your <em>Persona</em> (target audience)</h4>
+<p><strong>Human center-design</strong></p>
+<p>Develop <del>for your users</del> for humans</p>
 <div class="footer">
 <p><a href="https://www.youtube.com/watch?v=YnZJ6Dsou0w">What is Human-center design? (Video)</a> Video Spark Works</p>
 </div>
 </section>
-<section id="step-2.-description-of-your-app-and-sketch" class="slide level2">
-<h2>Step 2. Description of your app and sketch</h2>
-</section>
-<section id="extra-dashboard-categories" class="slide level2">
-<h2>Extra: Dashboard Categories</h2>
-<ol type="1">
-<li class="fragment">Tactic</li>
-<li class="fragment">Operational</li>
-<li class="fragment">Strategic</li>
-</ol>
-
-<aside><div>
-<p>Here could be an extra step if you have tro decide the software</p>
-</div></aside></section>
-<section id="a-classification" class="slide level2">
-<h2>A classification</h2>
-
-<img data-src="img/pappaetal.png" class="r-stretch"><div class="footer">
-<p>Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effective Dashboard Data Visualization. In: Smith, M.J., Salvendy, G. (eds) Human Interface and the Management of Information. Interacting with Information. Human Interface 2011. Lecture Notes in Computer Science, vol 6771. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-21793-7_29</p>
-</div>
-</section>
-<section id="step-3.-create-a-list-of-metrics-that-you-want-to-include-in-the-dashboard-in-relation-to-your-objectives" class="slide level2">
-<h2>Step 3. Create a list of metrics that you want to include in the dashboard in relation to your objectives</h2>
-<p>Create a List of KPIs and Metrics for Each Strategic Objective and select the most appropriated ones</p>
-<p>KPIs are SMART (Specific, Measurable, Achievable, Result-oriented, and Time- bound)</p>
-</section>
-<section class="slide level2">
-
-
-<img data-src="img/kpi-strategic.png" class="r-stretch"><div class="footer">
-<p>Image from: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons.</p>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="img/kpi-tactical.png" class="r-stretch"><p>::: footer Image from: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons. :::</p>
-</section>
-<section id="step-4.-choose-presentation-method-and-interactivity" class="slide level2">
-<h2>Step 4. Choose Presentation Method and Interactivity</h2>
-<p><strong>i. Gather all components available.</strong></p>
+<section id="step-1.-motivation-and-purpose-4" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="b.-understand-the-data">B. Understand the data</h4>
 <ul>
-<li class="fragment">Plots</li>
-<li class="fragment">Gauges</li>
-<li class="fragment">Traffic lights, arrows, and other indicators</li>
-<li class="fragment">Interactivity for drill down, annotations, actions ( e.g., approvals)</li>
-<li class="fragment">Alerts / Notifications</li>
-<li class="fragment">Maps</li>
+<li class="fragment">Are there missing values?</li>
+<li class="fragment">Is there some pre-processing of the data needed?</li>
+<li class="fragment">What are the variables we are interested to display?</li>
 </ul>
+</section>
+<section id="step-1.-motivation-and-purpose-5" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="b.-understand-the-data-1">B. Understand the data</h4>
+<p><strong>How often the data will be updated?</strong></p>
+<table>
+<caption>Dashboard classification</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 48%">
+<col style="width: 20%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Purpose</th>
+<th>Update frecquency</th>
+<th>Interactivity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Strategic</td>
+<td>See and decide or question</td>
+<td>Moderate</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Operational</td>
+<td>See and act</td>
+<td>High</td>
+<td>Moderate</td>
+</tr>
+<tr class="odd">
+<td>Analytical</td>
+<td>See and question, explore what-if scenarios</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>Modified from: <a href="https://doi.org/10.1007/978-3-642-21793-7_29">Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effective Dashboard Data Visualization. In: Smith, M.J., Salvendy, G. (eds) Human Interface and the Management of Information. Interacting with Information. Human Interface 2011. Lecture Notes in Computer Science, vol 6771. Springer, Berlin, Heidelberg.</a></p>
+</div>
+</section>
+<section id="step-1.-motivation-and-purpose-6" class="slide level2">
+<h2>Step 1. Motivation and purpose</h2>
+<h4 id="c.-research-question-and-usage-scenario">C. Research question and usage scenario</h4>
+<ul>
+<li class="fragment"><a href="https://pages.github.ubc.ca/mds-2022-23/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html">Milestone 1</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="step-2.-create-a-list-of-resultsmetrics-that-you-want-to-include-in-relation-to-your-target-audience" class="title-slide slide level1 center">
+<h1>Step 2. Create a list of results/metrics that you want to include in relation to your target audience</h1>
+
+</section>
+<section id="step-2.-create-a-list-of-resultsmetrics-that-you-want-to-include-in-relation-to-your-target-audience-1" class="slide level2">
+<h2>Step 2. Create a list of results/metrics that you want to include in relation to your target audience</h2>
+<p>For example,</p>
+<ul>
+<li class="fragment">“Percentage of completion of product”<br>
+</li>
+<li class="fragment">“Revenue increase (%) by year”<br>
+</li>
+<li class="fragment">“Number of daily COVID-19 cases by country”<br>
+</li>
+<li class="fragment">“Percentage of reduction of COVID-19 cases”</li>
+</ul>
+<div class="footer">
+<p>Based in: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons.</p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="step-3.-choose-presentation-method-and-interactivity" class="title-slide slide level1 center">
+<h1>Step 3. Choose presentation method and interactivity</h1>
+
+</section>
+<section id="step-3.-choose-presentation-method-and-interactivity-1" class="slide level2">
+<h2>Step 3. Choose presentation method and interactivity</h2>
+<p><strong>A.</strong> Components (plots, maps, notifications, text). <strong>B.</strong> Design dashboard layout.</p>
+</section>
+<section id="step-3.-choose-presentation-method-and-interactivity-2" class="slide level2">
+<h2>Step 3. Choose presentation method and interactivity</h2>
+<h4 id="a.-components">A. Components</h4>
+<p>For example:</p>
+<ul>
+<li class="fragment"><p>“Percentage of completion of product” <strong>-&gt; Plot</strong></p></li>
+<li class="fragment"><p>“revenue increase (%) by year” <strong>-&gt; Plot</strong></p></li>
+<li class="fragment"><p>“Number of daily COVID-19 cases by country” <strong>-&gt; Map</strong></p></li>
+<li class="fragment"><p>“Percentage of reduction of COVID-19 cases” <strong>-&gt; Text</strong></p></li>
+</ul>
+</section>
+<section id="step-3.-choose-presentation-method-and-interactivity-3" class="slide level2">
+<h2>Step 3. Choose presentation method and interactivity</h2>
+<h4 id="a.-components-1">A. Components</h4>
+<p><strong>What library to use to include…?</strong> * Plots<br>
+* Gauges<br>
+* Alerts / Notifications<br>
+* Maps<br>
+* Text boxes * Reports</p>
 </section>
 <section id="plots" class="slide level2">
 <h2>Plots</h2>
-<p>Could not be interactive too - <a href="https://r-graph-gallery.com/interactive-charts.html">Interactive plots - the R graph Gallery</a> - <a href="https://r-graph-gallery.com/animation.html">Animation plots - the R graph Gallery</a></p>
+<p>We are going to learn more in future lectures</p>
+<ul>
+<li class="fragment">Could not be interactive too</li>
+<li class="fragment"><a href="https://r-graph-gallery.com/interactive-charts.html">Interactive plots - the R graph Gallery</a></li>
+<li class="fragment"><a href="https://r-graph-gallery.com/animation.html">Animation plots - the R graph Gallery</a></li>
+</ul>
 </section>
 <section id="plots-1" class="slide level2">
 <h2>Plots</h2>
@@ -529,75 +587,227 @@
 <h2>Plots</h2>
 <h5 id="thresholds-period-selection">Thresholds / period selection</h5>
 
-<img data-src="img/example-plot-line.png" class="r-stretch"><div class="footer">
+<img data-src="img/example-plot-line.png" class="r-stretch quarto-figure-center"><div class="footer">
 <p><a href="https://allisonhorst.github.io/eds221-day8-comp/data_viz.html"><code>Customized Data Visualization in ggplot2</code> - Allison Horst</a></p>
 </div>
 </section>
 <section id="maps" class="slide level2">
 <h2>Maps</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>“Number of daily COVID cases by province” -&gt; <strong>Map</strong> -&gt; <strong><code>leaflet</code> library</strong></p>
+<p><em>“Using this library we can add labels that will be revealed when the user interacts with the app…”</em></p>
 <ul>
-<li class="fragment"><code>leafleat</code></li>
+<li class="fragment"><a href="https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384">COVID-19 Tracker app</a></li>
 </ul>
 </section>
-<section class="slide level2">
-
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif"></p>
-<p></p><figcaption>Shinyalert</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif"></p>
-<p></p><figcaption><code>Shinyalert</code> package</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="step-4.-choose-presentation-method-and-interactivity-for-each-kpi" class="slide level2">
-<h2>Step 4. Choose Presentation Method and Interactivity for Each KPI</h2>
-<p><strong>ii. Design dashboard layout.</strong></p>
+<section id="step-3.-choose-presentation-method-and-interactivity-4" class="slide level2">
+<h2>Step 3. Choose presentation method and interactivity</h2>
+<h4 id="b.-desing-dashboard-layout">B. Desing dashboard layout</h4>
 <ul>
-<li class="fragment">Accesibility</li>
+<li class="fragment">Accessibility</li>
 <li class="fragment">Fonts and size</li>
-<li class="fragment">Colors</li>
+<li class="fragment">Colors / themes</li>
+</ul>
+</section>
+<section id="step-3.-choose-presentation-method-and-interactivity-5" class="slide level2">
+<h2>Step 3. Choose presentation method and interactivity</h2>
+<h4 id="b.-desing-dashboard-layout-1">B. Desing dashboard layout</h4>
+<ul>
 <li class="fragment">Do we need more than one dashboard?</li>
 <li class="fragment">Are components that can be collapsed / expanded?</li>
+<li class="fragment">Titles, subtitles, labels</li>
 </ul>
 <blockquote>
 <p><strong>Does the organization has a particular color and layout scheme desired for the dashboards?</strong></p>
 </blockquote>
-</section>
-<section class="slide level2">
+</section></section>
+<section>
+<section id="step-4.-description-of-your-app-and-sketch" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1><strong>Step 4</strong>. Description of your app and sketch</h1>
 
-<p><strong>iii. Assign dashboard title and component labels</strong></p>
-</section>
-<section class="slide level2">
-
-<p><strong>iv. Specify core dashboard functionality</strong></p>
 </section>
 <section class="slide level2">
 
 
 <img data-src="img/sketch.png" class="r-stretch"></section>
-<section id="inspiration" class="slide level2">
-<h2>Inspiration</h2>
-<p>It is always a good idea to check examples</p>
-<ul>
-<li class="fragment"><a href="">Shiny Gallery</a></li>
-</ul>
-</section>
-<section id="step-5.-create-a-sketch-of-the-dashboard-or-prototype" class="slide level2">
-<h2>Step 5. Create a sketch of the dashboard (or prototype)</h2>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="app-design-some-final-messages" class="title-slide slide level1 center">
+<h1>App design: Some final messages</h1>
+
 </section>
 <section class="slide level2">
 
 </section></section>
 <section>
-<section id="some-messages" class="title-slide slide level1 center">
-<h1>Some messages</h1>
+<section id="simplicity-is-gold" class="title-slide slide level1 center">
+<h1><strong>Simplicity</strong> is gold</h1>
+<div class="footer">
+<p><a href="https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep">The danger of feature-creep - UX-matters - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+</section>
+<section class="slide level2">
 
+</section></section>
+<section>
+<section id="uis-should-be-as-self-explanatory-as-possible" class="title-slide slide level1 center">
+<h1>UIs should be as <strong>self-explanatory</strong> as possible</h1>
+<p>Add labels, titles, notes for the users.</p>
+<div class="footer">
+<p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+</section>
+<section id="rule-of-least-surprise" class="slide level2">
+<h2>Rule of Least Surprise</h2>
+<blockquote>
+<p>Rule of Least Surprise: In interface design, always do the least surprising thing.</p>
+<p>The Art of UNIX Programming (Raymond 2003)</p>
+</blockquote>
+<div class="footer">
+<p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+<p>–</p>
+</section></section>
+<section>
+<section id="rule-of-least-surprise-1" class="title-slide slide level1 center">
+<h1>Rule of Least Surprise</h1>
+<p>When we are browsing the web, <strong>we have a series of pre-conceptions</strong> about what things are and what they do.</p>
+<div class="fragment">
+<p>For example, <strong>we expect an underline text to be clickable</strong>, so there is a good chance that if you use underlined text in your app, the user will try to click on it.</p>
+<div class="footer">
+<p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="questions-break" class="title-slide slide level1 center">
+<h1>Questions? Break!</h1>
+
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="how-to-structure-the-ui-of-your-shiny-app" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1>2. How to structure the UI of your Shiny app?</h1>
+<ul>
+<li class="fragment"><a href="https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384">COVID-19 Tracker app</a></li>
+</ul>
+</section>
+<section id="layouts" class="slide level2">
+<h2>Layouts</h2>
+<ul>
+<li class="fragment"><strong>Single page layouts</strong> <code>fluidPage()</code>
+<ul>
+<li class="fragment">Page with sidebar
+<ul>
+<li class="fragment"><code>sidebarLayout()</code></li>
+<li class="fragment"><code>mainPanel()</code></li>
+<li class="fragment"><code>sidebarPanel()</code></li>
+</ul></li>
+<li class="fragment">Multi-row
+<ul>
+<li class="fragment"><code>fluidRow()</code></li>
+<li class="fragment"><code>column()</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="layouts-1" class="slide level2">
+<h2>Layouts</h2>
+<ul>
+<li class="fragment"><strong>Multi-page layouts</strong>
+<ul>
+<li class="fragment">Tabsets</li>
+<li class="fragment"><code>tabsetPanel()</code></li>
+<li class="fragment"><code>tabPanel()</code></li>
+<li class="fragment">Navbars</li>
+<li class="fragment"><code>navbarPage()</code></li>
+<li class="fragment"><code>navbarMenu()</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="layout-functions" class="slide level2">
+<h2>Layout functions</h2>
+
+<img data-src="img/layout.png" class="r-stretch"><div class="footer">
+<p>Shiny Cheat-sheet</p>
+</div>
+</section>
+<section id="single-page-layout" class="slide level2">
+<h2>Single page layout</h2>
+<h4 id="structure-of-a-basic-app-with-a-sidebar">Structure of a basic app with a sidebar</h4>
+
+<img data-src="img/sidebar.png" class="r-stretch"></section>
+<section id="single-page-layout-1" class="slide level2">
+<h2>Single page layout</h2>
+<h4 id="the-structure-underlying-a-simple-multi-row-app">The structure underlying a simple multi-row app</h4>
+
+<img data-src="img/multirow.png" class="r-stretch"><p><strong>Each row is made up of 12 columns</strong> and the first argument to <code>column()</code> gives how many of those columns to occupy.</p>
+</section>
+<section id="navbarpage" class="slide level2">
+<h2>NavbarPage</h2>
+<div class="cell">
+
+</div>
+</section></section>
+<section id="demo-sidebar-tabs-and-navbar" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1>DEMO: Sidebar, tabs and navbar</h1>
+
+</section>
+
+<section>
+<section id="how-to-add-themes-and-style-to-your-shiny-app" class="title-slide slide level1 center" data-background-color="#F1FFFA">
+<h1>3. How to add themes and style to your Shiny app?</h1>
+
+</section>
+<section id="themes" class="slide level2">
+<h2>Themes</h2>
+<h4 id="bslib-package"><code>bslib</code> package</h4>
+<div class="cell">
+
+</div>
+</section>
+<section id="you-can-select-your-own-theme" class="slide level2">
+<h2>You can select your own theme!</h2>
+<p>Use the function <code>bslib::bs_theme_preview()</code> to define your theme interactively</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="themes-1" class="slide level2">
+<h2>Themes</h2>
+<h4 id="thematic-package"><code>thematic</code> package</h4>
+<p>For plots you can use <code>thematic</code> package adding <code>thematic_shiny()</code></p>
+<div class="cell">
+
+</div>
+</section>
+<section id="learning-outcomes" class="slide level2" data-background-color="#FED9B7">
+<h2>Learning outcomes</h2>
+<ol type="1">
+<li class="fragment"><p>Recognize the importance of user center design when developing a dashboard</p></li>
+<li class="fragment"><p>Understand the user’s needs creating personas profiles</p></li>
+<li class="fragment"><p>Define the steps needed to create a production-grade app</p></li>
+<li class="fragment"><p>Design the user interface of an app using single and multi-page layouts</p></li>
+<li class="fragment"><p>Apply themes to the dashboard user interface</p></li>
+</ol>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions?</h1>
+
+</section>
+<section class="slide level2">
+
+<p><img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif" alt="Shinyalert package"> <img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif" alt="Shinyalert"></p>
 </section>
 <section class="slide level2">
 
@@ -617,88 +827,7 @@
 <div class="footer">
 <p><a href="https://engineering-shiny.org/building-ispum-app.html">Building an “ipsum-app” - Engineering Production-Grade Shiny Apps</a></p>
 </div>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="simplicity-is-gold" class="title-slide slide level1 center">
-<h1><strong>Simplicity</strong> is gold</h1>
-<div class="footer">
-<p><a href="https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep">The danger of feature-creep - UX-matters - Engineering Production-Grade Shiny Apps</a></p>
-</div>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="uis-should-be-as-self-explanatory-as-possible" class="title-slide slide level1 center">
-<h1>UIs should be as <strong>self-explanatory</strong> as possible</h1>
-<ul>
-<li class="fragment">Add lables, titles, notes for the users.</li>
-</ul>
-<div class="footer">
-<p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
-</div>
-</section>
-<section id="rule-of-least-surprise" class="slide level2">
-<h2>Rule of Least Surprise</h2>
-<blockquote>
-<p>Rule of Least Surprise: In interface design, always do the least surprising thing.</p>
-<p>The Art of UNIX Programming (Raymond 2003)</p>
-</blockquote>
-<div class="footer">
-<p><a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a></p>
-</div>
-<table>
-<tbody>
-<tr class="odd">
-<td># Rule of Least Surprise</td>
-</tr>
-<tr class="even">
-<td>When we are browsing the web, we have a series of pre-conceptions about what things are and what they do.</td>
-</tr>
-<tr class="odd">
-<td>. . .</td>
-</tr>
-<tr class="even">
-<td>For example, we expect an underline text to be clickable, so there is a good chance that if you use underlined text in your app, the user will try to click on it. Usually, the link is also colored differently from the rest of the text.</td>
-</tr>
-<tr class="odd">
-<td>::: footer <a href="https://engineering-shiny.org/ux-matters.html">UX-matters - Engineering Production-Grade Shiny Apps</a> :::</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<p>Fay, C., Rochette, S., Guyader, V., &amp; Girard, C. (2021). Engineering Production-Grade Shiny Apps. Chapman and Hall/CRC.</p>
-<ul>
-<li class="fragment"><p><a href="https://engineering-shiny.org/dont-rush-into-coding.html">Don’t rush into coding</a></p></li>
-<li class="fragment"><p><a href="https://engineering-shiny.org/ux-matters.html">UX user experience</a></p></li>
-<li class="fragment"><p><a href="https://engineering-shiny.org/building-ispum-app.html">Building an “ispum-app”</a></p></li>
-</ul>
-</section></section>
-<section>
-<section id="how-to-structure-your-shiny-app-layouts-tabs-navbar." class="title-slide slide level1 center" data-background-color="#F1FFFA">
-<h1>2. How to structure your Shiny app? Layouts, tabs, navbar.</h1>
-
-</section>
-<section id="layout-functions" class="slide level2">
-<h2>Layout functions</h2>
-
-<img data-src="img/layout.png" class="r-stretch"></section>
-<section id="tabs" class="slide level2">
-<h2>Tabs</h2>
-
-<img data-src="img/tabs.png" class="r-stretch"></section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="demo-add-navbarpage-layouts-and-tabs." class="title-slide slide level1 center">
-<h1>DEMO: Add navbarPage, layouts and tabs.</h1>
-
+<p>–</p>
 </section>
 <section id="boostrap" class="slide level2">
 <h2>Boostrap</h2>
@@ -707,46 +836,23 @@
 <section id="boostrap-grid-system" class="slide level2">
 <h2>Boostrap grid system</h2>
 <p>The Bootstrap grid has <strong>twelve columns</strong>, and <a href="https://getbootstrap.com/docs/5.1/layout/grid/#grid-options">six responsive tiers</a> (allowing you to specify different behaviors on different screen sizes)</p>
-
-<img data-src="img/boostrap.png" width="400" class="r-stretch quarto-figure-center"><div class="footer">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/boostrap.png" width="400"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="footer">
 <p><a href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/"><code>dash-bootstrap-components</code> documentation</a> / <a href="https://www.youtube.com/watch?v=0mfIK8zxUds">Video Charming data</a></p>
 </div>
-</section></section>
-<section>
-<section id="how-to-add-themes-and-style-to-your-shiny-app" class="title-slide slide level1 center" data-background-color="#F1FFFA">
-<h1>3. How to add themes and style to your Shiny app?</h1>
-
-</section>
-<section id="bslib-package" class="slide level2">
-<h2><code>bslib</code> package</h2>
-<p>Bootstrap themes</p>
-</section>
-<section id="css-stylesheet" class="slide level2">
-<h2>CSS stylesheet</h2>
-</section>
-<section id="other-considerations-about-color-palettes-for-plots" class="slide level2">
-<h2>Other considerations about color palettes for plots</h2>
-</section>
-<section id="learning-outcomes" class="slide level2" data-background-color="#FED9B7">
-<h2>Learning outcomes</h2>
-<ol type="1">
-<li class="fragment"><p>Recognize the importance of user center design when developing a dashboard</p></li>
-<li class="fragment"><p>Reflect about differences in the design</p></li>
-<li class="fragment"><p>Customize the app appearance using boostrap themes</p></li>
-<li class="fragment"><p>Understand the user’s needs creating personas profiles</p></li>
-<li class="fragment"><p>Design a prototype of an app</p></li>
-</ol>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section id="questions" class="title-slide slide level1 center">
-<h1>Questions?</h1>
-
-<img src="img/mdslogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="img/mdslogo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
