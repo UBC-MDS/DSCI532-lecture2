@@ -14,30 +14,37 @@ format:
 ---
 
 ## Lecture 2
-1. Steps to create a production-grade app
-2. Why is user center design so important?
-3. How to structure your Shiny app? Layouts, tabs, navbar.
-4. How to add themes and style to your Shiny app?
+1. Steps to create a **production-grade app**
+2. Why is **user center design** so important?
+3. Building your Shiny App UI: **Layouts, tabs, navbar**.
+4. How to add **themes and style** to your Shiny app?
 
 
 ---
 
-## Design UI references
+##  🙌 Design UI references
+**Engineering Production-Grade Shiny Apps**   
 
+Chapters:   
+  
+- 📚 [Don't rush into coding](https://engineering-shiny.org/dont-rush-into-coding.html)
+
+- 📚 [UX Matters](https://engineering-shiny.org/ux-matters.html)
+
+- 📚 [Building an "ispum-app"](https://engineering-shiny.org/building-ispum-app.html)
+
+:::footer
 Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-Grade Shiny Apps. Chapman and Hall/CRC. 
-
-- [Don't rush into coding](https://engineering-shiny.org/dont-rush-into-coding.html)
-
--   [UX user experience](https://engineering-shiny.org/ux-matters.html)
-
--   [Building an "ispum-app"](https://engineering-shiny.org/building-ispum-app.html)
+:::
 
 ---
 
 ## Today's goal
 #### Design and build a Shiny app UI
 
-Chapter 6 - [Layout, themes, HTML](https://mastering-shiny.org/action-layout.html#action-layout) - Mastering Shiny 
+**Mastering Shiny**
+
+- 📚 Chapter 6 - [Layout, themes, HTML](https://mastering-shiny.org/action-layout.html#action-layout) 
 
 ---
 
@@ -51,8 +58,9 @@ Chapter 6 - [Layout, themes, HTML](https://mastering-shiny.org/action-layout.htm
 
 ---
 
-## What is a “production-grade” app?
-These three properties impact two specific groups: users and the developers:
+## 🛑🤔
+#### What is a “production-grade” app?
+These three properties impact two specific groups: **users and the developers**.
 
 * It is **used**, even if only by one person.
 
@@ -61,11 +69,43 @@ These three properties impact two specific groups: users and the developers:
 * It has **real life impact** if something goes wrong.
 
 
-
-
-
 :::footer
 Extracted from [Engineering Production-Grade Shiny Apps book](https://engineering-shiny.org/index.html#what-is-production)]
+:::
+
+---
+
+## The road to a production-grade app
+
+1. Motivation and purpose
+2. Select the results/metrics that you want for your target audience
+3. Choose presentation method and interactivity 
+4. Description of your app and sketch
+5. Write the code of the app following a workflow
+6. Ensure the app's reproducibility and deploy it 
+
+
+::: footer
+Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
+:::
+
+
+---
+
+# Why is user center design so important?{background-color="#F1FFFA"}
+
+---
+
+## Develop for your users
+
+-   As data scientists, we have the tendency to be focused on the **back-end**, i.e. the server part of the application
+
+. . .
+
+-   **do not underestimate the necessity for a successful front-end** 
+
+::: footer
+[UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
 :::
 
 ---
@@ -89,55 +129,43 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 
 ---
 
-# Why is user center design so important?
-
----
-
-## Develop for your users
-
--   As data scientists, we have the tendency to be focused on the **back-end**, i.e. the server part of the application
-
-. . .
-
--   **do not underestimate the necessity for a successful front-end** 
-
-::: footer
-[UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
-:::
-
-
-
 
 # **Step1**. Motivation and purpose  {background-color="#F1FFFA"}
 
 ---
 
-## Step 1. Motivation and purpose
-**A.** Get to know well your *Persona* (target audience)
-**B.** Understand the the data
-**C.** Define the research question and usage scenario 
+## Step 1. Motivation and purpose  
+**A.** Get to know well your *Persona*   
+**B.** Understand the the data.  
+
 
 ---
 
 ## Step 1. Motivation and purpose
-#### A. Get to know well your *Persona* (target audience)
+#### A. Get to know well your *Persona* 
 
+:::: {.columns}
+
+::: {.column width="40%"}
 A *persona* is a character that represents the “typical” behavior and traits for a group of users that will interact with your product.
+:::
 
-
+::: {.column width="60%"}
 ![](img/Personas.jpg){fig-align='center'}
+:::
 
+::::
 
 
 :::footer
-[Building *personas* - Chapter 7 - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/dont-rush-into-coding.html#building-personas)
+[Building *personas* - Chapter 7 - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/dont-rush-into-coding.html#building-personas) - Image: The Turing Way and Scriberia
 :::
 
 
 ---
 
 ## Step 1. Motivation and purpose
-#### A. Get to know well your *Persona* (target audience)
+#### A. Get to know well your *Persona* 
 
 * While building your application, **you can think about how each persona will interact with a given feature**: 
    - Will they use it? 
@@ -157,6 +185,7 @@ A *persona* is a character that represents the “typical” behavior and traits
 
 Develop ~~for your users~~ for humans
 
+{{< video https://www.youtube.com/watch?v=YnZJ6Dsou0w >}}
 
 ::: footer
 [What is Human-center design? (Video)](https://www.youtube.com/watch?v=YnZJ6Dsou0w) Video Spark Works
@@ -167,16 +196,30 @@ Develop ~~for your users~~ for humans
 ## Step 1. Motivation and purpose
 #### B. Understand the data
 
+:::: {.columns}
+
+::: {.column width="60%"}
 - Are there missing values?
 - Is there some pre-processing of the data needed?
 - What are the variables we are interested to display?
+:::
+
+::: {.column width="40%"}
+![](img/ResearchTools.jpg){fig-align='center'}
+
+:::
+
+::::
+
+:::footer
+Image: The turing way and Scriberia
+:::
 
 ---
 
 ## Step 1. Motivation and purpose
 #### B. Understand the data
 **How often the data will be updated?**
-
 
 
 | Category    | Purpose                                     | Update frecquency | Interactivity |
@@ -197,24 +240,26 @@ Modified from: [Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effe
 ---
 
 ## Step 1. Motivation and purpose
-#### C. Define the research question and usage scenario.
+#### Milestone 1 checklist
+- `Proposal.md`
+ 
 
 - [Milestone 1](https://pages.github.ubc.ca/mds-2022-23/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html)
 
 ---
 
-# Step 2. Select the results/metrics that you want for your target audience
+# Step 2. Select the results/metrics that you want for your target audience{background-color="#F1FFFA"}
 
 ---
 
 ## Step 2. Select the results/metrics that you want for your target audience
 
-For example, 
-
+**Example 1: Business dashboard**
 * "Percentage of completion of product"   
 * "Revenue increase (%) by year"   
+**Example 2: COVID-19 dashboard**
 * "Number of daily COVID-19 cases by country"   
-* "Percentage of reduction of COVID-19 cases"   
+* "Percentage of COVID-19 cases"   
 
 ::: footer
 Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
@@ -222,7 +267,7 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 ---
 
-# Step 3. Choose presentation method and interactivity 
+# Step 3. Choose presentation method and interactivity{background-color="#F1FFFA"} 
 
 ---
 
@@ -236,15 +281,43 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 #### A. Components 
 
-For example:
-
+**Example 1: Business dashboard**
 * "Percentage of completion of product" **-> Plot**  
   
-* "revenue increase (%) by year" **-> Plot**  
+* "revenue increase (%) by year" **-> Plot**   
+ 
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+ 
+**Example 2: COVID-19 dashboard**
   
 * "Number of daily COVID-19 cases by country" **-> Map**  
   
-* "Percentage of reduction of COVID-19 cases" **-> Text**
+* "Percentage of COVID-19 cases" **-> Text box** 
+
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+
+**Example 1: Business dashboard**
+* "Percentage of completion of product" **-> Plot**  (could be a text box too!)
+  
+* "revenue increase (%) by year" **-> Plot**   (could be a text box too!)
+ 
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+ 
+**Example 2: COVID-19 dashboard**
+  
+* "Number of daily COVID-19 cases by country" **-> Map**  (could be a table too!)
+  
+* "Percentage of COVID-19 cases" **-> Text box** (could be part of a plot too!)
+
 
 ---
 
@@ -258,13 +331,17 @@ For example:
 * Text boxes 
 * Reports  
 
+---
+
+Recommendations:
+- Good moment to check galleries of apps. What can of widgets/libraries are available?
+
 
 ---
 
 ## Plots 
-We are going to learn more in future lectures
 
-- Could not be interactive too
+- Not all the plots should be interactive...
 - [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
 - [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
 
@@ -340,7 +417,7 @@ We are going to learn more in future lectures
 :::
 
 
----
+
 
 # UIs should be as **self-explanatory** as possible
 
@@ -390,26 +467,12 @@ For example, **we expect an underline text to be clickable**, so there is a good
 
 ## Layouts
 
-- **Single page layouts** `fluidPage()`
+- **Single page layouts** 
   - Page with sidebar   
-    - `sidebarLayout()` 
-    - `mainPanel()` 
-    - `sidebarPanel()`
   - Multi-row 
-    - `fluidRow()` 
-    - `column()`
-
----
-
-## Layouts
-
 - **Multi-page layouts**  
   - Tabsets 
-   - `tabsetPanel()`
-   - `tabPanel()`
   - Navbars
-   - `navbarPage()`
-   - `navbarMenu()`
 
 ---
 
@@ -428,21 +491,29 @@ Shiny Cheat-sheet
 
 ![](img/sidebar.png)
 
+:::footer
+Mastering Shiny
+:::
+
 ---
 
 ## Single page layout
 #### The structure underlying a simple multi-row app 
 
 
-![](img/multirow.png)
+![](img/multirow.png){fig-align='center'}
 
 **Each row is made up of 12 columns** and the first argument to `column()` gives how many of those columns to occupy.
+
+:::footer
+Mastering Shiny
+:::
 
 ---
 
 ## NavbarPage
 
-```{r eval=FALSE, include=TRUE}
+```r
 ui <- navbarPage(
   "Page title",   
   tabPanel("panel 1", "one"),
@@ -468,7 +539,7 @@ ui <- navbarPage(
 ## Themes
 #### `bslib` package
 
-```{r eval=FALSE, include=TRUE}
+```r
 fluidPage(
   theme = bslib::bs_theme(...)
 )
@@ -476,11 +547,20 @@ fluidPage(
 
 ---
 
-## You can select your own theme!
+## Bootstrap
 
-Use the function `bslib::bs_theme_preview()` to define your theme interactively
+**Bootstrap** is the world's most popular frontend framework, providing ready-to-use templates for css and javascript, that save developers time.
 
-```{r eval=FALSE, include=TRUE}
+What themes are available? [Click here!](https://bootswatch.com/)
+
+
+---
+
+## You can create your own theme!
+
+💡 Use the function `bslib::bs_theme_preview()` to define your theme interactively
+
+```r
 theme <- bslib::bs_theme(
   bg = "#0b3d91", 
   fg = "white", 
@@ -493,10 +573,12 @@ theme <- bslib::bs_theme(
 ## Themes
 #### `thematic` package
 
-For plots you can use `thematic` package adding `thematic_shiny()` 
+`ggplot2` only:
+You can use `thematic` package adding `thematic_shiny()` 
 
-```{r eval=FALSE, include=TRUE}
- library(ggplot2)
+```r
+library(ggplot2)
+library(shiny)
 
 ui <- fluidPage(
   theme = bslib::bs_theme(bootswatch = "darkly"),
@@ -514,7 +596,6 @@ server <- function(input, output, session) {
   }, res = 96)
 }
 
-
 ```
 
 ---
@@ -527,9 +608,10 @@ server <- function(input, output, session) {
 
 3.  Build the user interface of a Shiny app using single and multi-page layouts
 
-4.  Customize the Shiny app appearance using boostrap themes 
+4.  Customize the Shiny app appearance using bootstrap themes 
 
 5.  Design a prototype of an app the user's needs creating personas profiles
+
 ---
 
 # Questions?
@@ -557,9 +639,7 @@ server <- function(input, output, session) {
 :::
 --
 
-## Boostrap
 
-**Bootstrap** is the world's most popular frontend framework, providing ready-to-use templates for css and javascript, that save developers time.
 
 ------------------------------------------------------------------------
 
