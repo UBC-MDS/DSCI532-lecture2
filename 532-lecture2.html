@@ -379,6 +379,9 @@
       margin-right: 0; 
     }
   </style>
+  
+  <script src="532-lecture2_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="532-lecture2_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -570,50 +573,49 @@
 </div>
 </div>
 <div class="footer">
-<p>Image: The turing way and Scriberia</p>
+<p>Image: The Turing Way and Scriberia</p>
 </div>
 </section>
 <section id="step-1.-motivation-and-purpose-5" class="slide level2">
 <h2>Step 1. Motivation and purpose</h2>
 <h4 id="b.-understand-the-data-1">B. Understand the data</h4>
 <p><strong>How often the data will be updated?</strong></p>
-<table>
-<caption>Dashboard classification</caption>
-<colgroup>
-<col style="width: 14%">
-<col style="width: 48%">
-<col style="width: 20%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Purpose</th>
-<th>Update frecquency</th>
-<th>Interactivity</th>
-</tr>
-</thead>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table table-striped" style="font-size: 30px; ">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> category </th>
+   <th style="text-align:left;"> purpose </th>
+   <th style="text-align:left;"> update.frecquency </th>
+   <th style="text-align:left;"> interactivity </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td>Strategic</td>
-<td>See and decide or question</td>
-<td>Moderate</td>
-<td>Low</td>
-</tr>
-<tr class="even">
-<td>Operational</td>
-<td>See and act</td>
-<td>High</td>
-<td>Moderate</td>
-</tr>
-<tr class="odd">
-<td>Analytical</td>
-<td>See and question, explore what-if scenarios</td>
-<td>Low</td>
-<td>High</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> strategic </td>
+   <td style="text-align:left;"> see and decide or question </td>
+   <td style="text-align:left;"> moderate </td>
+   <td style="text-align:left;"> low </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> operational </td>
+   <td style="text-align:left;"> see and act </td>
+   <td style="text-align:left;"> high </td>
+   <td style="text-align:left;"> moderate </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> analytical </td>
+   <td style="text-align:left;"> See and question, explore what-if scenarios </td>
+   <td style="text-align:left;"> low </td>
+   <td style="text-align:left;"> high </td>
+  </tr>
 </tbody>
 </table>
+
+</div>
+</div>
 <div class="footer">
 <p>Modified from: <a href="https://doi.org/10.1007/978-3-642-21793-7_29">Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effective Dashboard Data Visualization. In: Smith, M.J., Salvendy, G. (eds) Human Interface and the Management of Information. Interacting with Information. Human Interface 2011. Lecture Notes in Computer Science, vol 6771. Springer, Berlin, Heidelberg.</a></p>
 </div>
@@ -636,16 +638,15 @@
 </section>
 <section id="step-2.-select-the-resultsmetrics-that-you-want-for-your-target-audience-1" class="slide level2">
 <h2>Step 2. Select the results/metrics that you want for your target audience</h2>
-<p><strong>Example 1: Business dashboard</strong> * “Percentage of completion of product”<br>
+<p><strong>Example 1: Business dashboard</strong><br>
+* “Percentage of completion of product”<br>
 * “Revenue increase (%) by year”<br>
-<strong>Example 2: COVID-19 dashboard</strong> * “Number of daily COVID-19 cases by country”<br>
+<strong>Example 2: COVID-19 dashboard</strong><br>
+* “Number of daily COVID-19 cases by country”<br>
 * “Percentage of COVID-19 cases”</p>
 <div class="footer">
 <p>Based in: Rasmussen, N. H., Bansal, M., &amp; Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley &amp; Sons.</p>
 </div>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="step-3.-choose-presentation-method-and-interactivity" class="title-slide slide level1 center" data-background-color="#F1FFFA">
@@ -654,14 +655,16 @@
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-1" class="slide level2">
 <h2>Step 3. Choose presentation method and interactivity</h2>
-<p><strong>A.</strong> Components (plots, maps, notifications, text). <strong>B.</strong> Design dashboard layout.</p>
+<p><strong>A.</strong> Components (plots, maps, notifications, text).</p>
+<p><strong>B.</strong> Design dashboard layout.</p>
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-2" class="slide level2">
 <h2>Step 3. Choose presentation method and interactivity</h2>
 <h4 id="a.-components">A. Components</h4>
-<p><strong>Example 1: Business dashboard</strong> * “Percentage of completion of product” <strong>-&gt; Plot</strong></p>
+<p><strong>Example 1: Business dashboard</strong></p>
 <ul>
-<li class="fragment">“revenue increase (%) by year” <strong>-&gt; Plot</strong></li>
+<li class="fragment"><p>“Percentage of completion of product” <strong>-&gt; Plot</strong></p></li>
+<li class="fragment"><p>“revenue increase (%) by year” <strong>-&gt; Plot</strong></p></li>
 </ul>
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-3" class="slide level2">
@@ -676,9 +679,10 @@
 <section id="step-3.-choose-presentation-method-and-interactivity-4" class="slide level2">
 <h2>Step 3. Choose presentation method and interactivity</h2>
 <h4 id="a.-components-2">A. Components</h4>
-<p><strong>Example 1: Business dashboard</strong> * “Percentage of completion of product” <strong>-&gt; Plot</strong> (could be a text box too!)</p>
+<p><strong>Example 1: Business dashboard</strong></p>
 <ul>
-<li class="fragment">“revenue increase (%) by year” <strong>-&gt; Plot</strong> (could be a text box too!)</li>
+<li class="fragment"><p>“Percentage of completion of product” <strong>-&gt; Plot</strong> (could be a text box)</p></li>
+<li class="fragment"><p>“revenue increase (%) by year” <strong>-&gt; Plot</strong> (could be a text box)</p></li>
 </ul>
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-5" class="slide level2">
@@ -686,39 +690,50 @@
 <h4 id="a.-components-3">A. Components</h4>
 <p><strong>Example 2: COVID-19 dashboard</strong></p>
 <ul>
-<li class="fragment"><p>“Number of daily COVID-19 cases by country” <strong>-&gt; Map</strong> (could be a table too!)</p></li>
-<li class="fragment"><p>“Percentage of COVID-19 cases” <strong>-&gt; Text box</strong> (could be part of a plot too!)</p></li>
+<li class="fragment"><p>“Number of daily COVID-19 cases by country” <strong>-&gt; Map</strong> (could be a table)</p></li>
+<li class="fragment"><p>“Percentage of COVID-19 cases” <strong>-&gt; Text box</strong> (could be part of a plot)</p></li>
 </ul>
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-6" class="slide level2">
 <h2>Step 3. Choose presentation method and interactivity</h2>
 <h4 id="a.-components-4">A. Components</h4>
-<p><strong>What library to use to include…?</strong> * Plots<br>
-* Gauges<br>
-* Alerts / Notifications<br>
-* Maps<br>
-* Text boxes * Reports</p>
+<p><strong>What library to use to include…?</strong></p>
+<ul>
+<li class="fragment"><p>Plots</p></li>
+<li class="fragment"><p>Gauges</p></li>
+<li class="fragment"><p>Alerts / Notifications</p></li>
+<li class="fragment"><p>Maps</p></li>
+<li class="fragment"><p>Text boxes</p></li>
+<li class="fragment"><p>Reports</p></li>
+</ul>
 </section>
-<section class="slide level2">
-
-<p>Recommendations: - Good moment to check galleries of apps. What can of widgets/libraries are available?</p>
+<section id="general-recommendation" class="slide level2">
+<h2>General recommendation</h2>
+<ul>
+<li class="fragment">Good moment to check galleries of apps.</li>
+<li class="fragment">What can of widgets/libraries are available?</li>
+</ul>
 </section>
 <section id="plots" class="slide level2">
 <h2>Plots</h2>
+<h4 id="interactivity-and-animations">Interactivity and animations</h4>
 <ul>
-<li class="fragment">Not all the plots should be interactive…</li>
 <li class="fragment"><a href="https://r-graph-gallery.com/interactive-charts.html">Interactive plots - the R graph Gallery</a></li>
 <li class="fragment"><a href="https://r-graph-gallery.com/animation.html">Animation plots - the R graph Gallery</a></li>
 </ul>
+<div class="footer">
+<p>You can also animate this way! <a href="https://haozhu233.shinyapps.io/shinyMRI-contest/?_ga=2.184446181.270431017.1676399074-1701640703.1675377384">Example: Shiny MRI</a></p>
+</div>
 </section>
 <section id="plots-1" class="slide level2">
 <h2>Plots</h2>
-<h4 id="threadholds-highlights">Threadholds / highlights</h4>
+<h4 id="plotly-in-r"><code>Plotly</code> in R?</h4>
+<p>Yes, sure!</p>
 <ul>
-<li class="fragment"><a href="https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html"><code>gghighlights</code></a></li>
+<li class="fragment"><p>📚 <embed data-src="https://plotly-r.com/index.html"></p></li>
+<li class="fragment"><p>With <code>plotly</code> you can create <a href="https://plotly-r.com/maps.html">maps</a> AND interactive plots.</p></li>
 </ul>
-
-<img data-src="img/example-plot-label.png" class="r-stretch"></section>
+</section>
 <section id="plots-2" class="slide level2">
 <h2>Plots</h2>
 <h5 id="thresholds-period-selection">Thresholds / period selection</h5>
@@ -727,10 +742,30 @@
 <p><a href="https://allisonhorst.github.io/eds221-day8-comp/data_viz.html"><code>Customized Data Visualization in ggplot2</code> - Allison Horst</a></p>
 </div>
 </section>
+<section id="plots-3" class="slide level2">
+<h2>Plots</h2>
+<h5 id="htmlwidgets"><code>htmlwidgets</code></h5>
+<p>Use JavaScript visualization libraries at the R console, just like plots</p>
+<p>http://gallery.htmlwidgets.org/</p>
+</section>
+<section id="plots-4" class="slide level2">
+<h2>Plots</h2>
+<h4 id="interactivity-and-animations-1">Interactivity and animations</h4>
+<p>⚠️ There are really nice libraries, but this doesn’t mean that all the plots/visualizations should be interactive, some of them can be only <strong>reactive</strong></p>
+<p>You can create great visualizations with <code>ggplot2</code>!</p>
+</section>
+<section id="plots-5" class="slide level2">
+<h2>Plots</h2>
+<h5 id="ggplot2"><code>ggplot2</code></h5>
+<p>Don’t forget that <code>ggplot2</code> has many extensions!</p>
+<ul>
+<li class="fragment"><p><a href="https://exts.ggplot2.tidyverse.org/gallery/"><code>ggplot2</code> extensions gallery</a></p></li>
+<li class="fragment"><p><a href="https://sportyr.sportsdataverse.org/"><code>sportyR</code></a></p></li>
+</ul>
+</section>
 <section id="maps" class="slide level2">
 <h2>Maps</h2>
-<p>“Number of daily COVID cases by province” -&gt; <strong>Map</strong> -&gt; <strong><code>leaflet</code> library</strong></p>
-<p><em>“Using this library we can add labels that will be revealed when the user interacts with the app…”</em></p>
+<p>Some libraries - <code>Leaflet</code> - <code>Plotly</code> - <code>ggplot2</code></p>
 <ul>
 <li class="fragment"><a href="https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384">COVID-19 Tracker app</a></li>
 </ul>
@@ -739,17 +774,17 @@
 <h2>Step 3. Choose presentation method and interactivity</h2>
 <h4 id="b.-desing-dashboard-layout">B. Desing dashboard layout</h4>
 <ul>
-<li class="fragment">Accessibility</li>
-<li class="fragment">Fonts and size</li>
-<li class="fragment">Colors / themes</li>
+<li class="fragment"><p><a href="https://engineering-shiny.org/ux-matters.html#making-your-app-accessible">Accesibility</a></p></li>
+<li class="fragment"><p><a href="https://mastering-shiny.org/action-layout.html#themes">Themes</a>, fonts and size</p></li>
+<li class="fragment"><p>Colors</p></li>
 </ul>
 </section>
 <section id="step-3.-choose-presentation-method-and-interactivity-8" class="slide level2">
 <h2>Step 3. Choose presentation method and interactivity</h2>
 <h4 id="b.-desing-dashboard-layout-1">B. Desing dashboard layout</h4>
 <ul>
-<li class="fragment">Do we need more than one dashboard?</li>
-<li class="fragment">Are components that can be collapsed / expanded?</li>
+<li class="fragment"><a href="https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep">Do we need more than one dashboard?</a></li>
+<li class="fragment"><a href="https://rstudio.github.io/shinydashboard/">Are components that can be collapsed / expanded?</a></li>
 <li class="fragment">Titles, subtitles, labels</li>
 </ul>
 <blockquote>
@@ -778,6 +813,7 @@
 </section></section>
 <section id="simplicity-is-gold" class="title-slide slide level1 center">
 <h1><strong>Simplicity</strong> is gold</h1>
+<p><a href="https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep">Avoid the danger of feature-creep</a></p>
 <div class="footer">
 <p><a href="https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep">The danger of feature-creep - UX-matters - Engineering Production-Grade Shiny Apps</a></p>
 </div>
@@ -939,6 +975,14 @@
 <span id="cb4-17"><a href="#cb4-17"></a>  }, <span class="at">res =</span> <span class="dv">96</span>)</span>
 <span id="cb4-18"><a href="#cb4-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="extra-shinydashboard-package" class="title-slide slide level1 center">
+<h1>Extra: <code>shinydashboard</code> package</h1>
+<p>https://rstudio.github.io/shinydashboard/</p>
+</section>
 <section id="learning-outcomes" class="slide level2" data-background-color="#FED9B7">
 <h2>Learning outcomes</h2>
 <ol type="1">
@@ -959,45 +1003,8 @@
 </section>
 <section class="slide level2">
 
-<p><img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif" alt="Shinyalert package"> <img data-src="https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif" alt="Shinyalert"></p>
-</section>
-<section class="slide level2">
 
-</section></section>
-<section>
-<section id="ui-design" class="title-slide slide level1 center">
-<h1>UI Design</h1>
-
-</section>
-<section id="dont-rush-into-coding" class="slide level2">
-<h2>Don’t Rush into Coding</h2>
-<h4 id="prototyping-is-crucial">Prototyping is crucial</h4>
-<blockquote>
-<p>Prototyping first may help keep you from investing far too much time for marginal gains.</p>
-<p>The Art of UNIX Programming (Raymond 2003) “Rule of Optimization: Prototype before polishing. Get it working before you optimize it.”</p>
-</blockquote>
-<div class="footer">
-<p><a href="https://engineering-shiny.org/building-ispum-app.html">Building an “ipsum-app” - Engineering Production-Grade Shiny Apps</a></p>
-</div>
-<p>–</p>
-</section>
-<section id="boostrap-grid-system" class="slide level2">
-<h2>Boostrap grid system</h2>
-<p>The Bootstrap grid has <strong>twelve columns</strong>, and <a href="https://getbootstrap.com/docs/5.1/layout/grid/#grid-options">six responsive tiers</a> (allowing you to specify different behaviors on different screen sizes)</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/boostrap.png" width="400"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="footer">
-<p><a href="https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/"><code>dash-bootstrap-components</code> documentation</a> / <a href="https://www.youtube.com/watch?v=0mfIK8zxUds">Video Charming data</a></p>
-</div>
-<p><img src="img/mdslogo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img src="img/mdslogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section></section>

@@ -212,7 +212,7 @@ Develop ~~for your users~~ for humans
 ::::
 
 :::footer
-Image: The turing way and Scriberia
+Image: The Turing Way and Scriberia
 :::
 
 ---
@@ -221,14 +221,18 @@ Image: The turing way and Scriberia
 #### B. Understand the data
 **How often the data will be updated?**
 
+```{r}
+data <- data.frame(category=c('strategic', 'operational', 'analytical'),
+                   purpose=c('see and decide or question', 'see and act', 'See and question, explore what-if scenarios'),
+                   `update frecquency` =c('moderate', 'high', 'low'),
+                   interactivity = c('low', 'moderate', 'high'))
 
-| Category    | Purpose                                     | Update frecquency | Interactivity |
-|-------------|---------------------------------------------|-------------------|---------------|
-| Strategic   | See and decide or question                  | Moderate          | Low           |
-| Operational | See and act                                 | High              | Moderate      |
-| Analytical  | See and question, explore what-if scenarios | Low               | High          |
-
-: Dashboard classification
+library(kableExtra)
+library(knitr)
+kable(data, "html") |> 
+  kable_styling( "striped", position = "left", font_size = 30)
+  
+```
 
 
 
@@ -254,18 +258,18 @@ Modified from: [Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effe
 
 ## Step 2. Select the results/metrics that you want for your target audience
 
-**Example 1: Business dashboard**
-* "Percentage of completion of product"   
-* "Revenue increase (%) by year"   
-**Example 2: COVID-19 dashboard**
-* "Number of daily COVID-19 cases by country"   
-* "Percentage of COVID-19 cases"   
+**Example 1: Business dashboard**  
+* "Percentage of completion of product"     
+* "Revenue increase (%) by year"     
+**Example 2: COVID-19 dashboard**  
+* "Number of daily COVID-19 cases by country"     
+* "Percentage of COVID-19 cases"     
 
 ::: footer
 Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
 :::
 
----
+
 
 # Step 3. Choose presentation method and interactivity{background-color="#F1FFFA"} 
 
@@ -274,6 +278,7 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 
 **A.** Components (plots, maps, notifications, text).
+  
 **B.** Design dashboard layout.
 
 ---
@@ -281,7 +286,8 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 #### A. Components 
 
-**Example 1: Business dashboard**
+**Example 1: Business dashboard**  
+  
 * "Percentage of completion of product" **-> Plot**  
   
 * "revenue increase (%) by year" **-> Plot**   
@@ -291,8 +297,8 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 #### A. Components 
  
-**Example 2: COVID-19 dashboard**
-  
+**Example 2: COVID-19 dashboard**  
+    
 * "Number of daily COVID-19 cases by country" **-> Map**  
   
 * "Percentage of COVID-19 cases" **-> Text box** 
@@ -302,10 +308,11 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 #### A. Components 
 
-**Example 1: Business dashboard**
-* "Percentage of completion of product" **-> Plot**  (could be a text box too!)
+**Example 1: Business dashboard**  
   
-* "revenue increase (%) by year" **-> Plot**   (could be a text box too!)
+* "Percentage of completion of product" **-> Plot**  (could be a text box)
+  
+* "revenue increase (%) by year" **-> Plot**   (could be a text box)
  
 ---
 
@@ -314,9 +321,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
  
 **Example 2: COVID-19 dashboard**
   
-* "Number of daily COVID-19 cases by country" **-> Map**  (could be a table too!)
+* "Number of daily COVID-19 cases by country" **-> Map**  (could be a table)
   
-* "Percentage of COVID-19 cases" **-> Text box** (could be part of a plot too!)
+* "Percentage of COVID-19 cases" **-> Text box** (could be part of a plot)
 
 
 ---
@@ -324,35 +331,51 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Step 3. Choose presentation method and interactivity 
 #### A. Components 
 **What library to use to include...?**
+  
 * Plots   
+
 * Gauges  
-* Alerts / Notifications  
-* Maps  
-* Text boxes 
-* Reports  
+
+* Alerts / Notifications
+
+* Maps    
+
+* Text boxes  
+
+* Reports    
 
 ---
 
-Recommendations:
-- Good moment to check galleries of apps. What can of widgets/libraries are available?
+## General recommendation
+- Good moment to check galleries of apps.
+- What can of widgets/libraries are available?
 
 
 ---
 
 ## Plots 
+#### Interactivity and animations
 
-- Not all the plots should be interactive...
 - [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
 - [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
+
+:::footer
+You can also animate this way! [Example: Shiny MRI](https://haozhu233.shinyapps.io/shinyMRI-contest/?_ga=2.184446181.270431017.1676399074-1701640703.1675377384)
+:::
+
+
 
 ---
 
 ## Plots
-#### Threadholds / highlights
+#### `Plotly` in R?
+Yes, sure!
 
-- [`gghighlights`](https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html)
+- 📚  ![Interactive web-based data visualization with R, plotly, and shiny (2019) Carson Sievert](https://plotly-r.com/index.html)
 
-![](img/example-plot-label.png)
+- With `plotly` you can create [maps](https://plotly-r.com/maps.html) AND interactive plots.
+
+
 
 ---
 
@@ -367,11 +390,39 @@ Recommendations:
 
 ---
 
+## Plots
+##### `htmlwidgets`
+Use JavaScript visualization libraries at the R console, just like plots
+
+http://gallery.htmlwidgets.org/
+
+---
+
+## Plots 
+#### Interactivity and animations
+
+
+⚠️ There are really nice libraries, but this doesn't mean that all the plots/visualizations should be interactive, some of them can be only **reactive**
+
+You can create great visualizations with `ggplot2`!
+
+---
+
+## Plots
+##### `ggplot2`
+Don't forget that `ggplot2` has many extensions!
+
+- [`ggplot2` extensions gallery](https://exts.ggplot2.tidyverse.org/gallery/)
+
+- [`sportyR`](https://sportyr.sportsdataverse.org/)
+
+---
+
 ## Maps
-
- "Number of daily COVID cases by province" -> **Map** -> **`leaflet` library**
-
-*"Using this library we can add labels that will be revealed when the user interacts with the app..."*
+Some libraries
+- `Leaflet`
+- `Plotly`
+- `ggplot2`
 
 - [COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384)
 
@@ -380,16 +431,19 @@ Recommendations:
 
 ## Step 3. Choose presentation method and interactivity 
 #### B. Desing dashboard layout
--   Accessibility
--   Fonts and size
--   Colors / themes
+  
+-   [Accesibility](https://engineering-shiny.org/ux-matters.html#making-your-app-accessible)  
+
+-   [Themes](https://mastering-shiny.org/action-layout.html#themes), fonts and size   
+
+-   Colors  
 
 ---
 
 ## Step 3. Choose presentation method and interactivity 
 #### B. Desing dashboard layout
--   Do we need more than one dashboard?
--   Are components that can be collapsed / expanded?
+-   [Do we need more than one dashboard?](https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep) 
+-   [Are components that can be collapsed / expanded?](https://rstudio.github.io/shinydashboard/)
 -   Titles, subtitles, labels
 
 > **Does the organization has a particular color and layout scheme desired for the dashboards?**
@@ -411,6 +465,7 @@ Recommendations:
 ---
 
 # **Simplicity** is gold
+[Avoid the danger of feature-creep](https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep)
 
 ::: footer
 [The danger of feature-creep - UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep)
@@ -600,6 +655,12 @@ server <- function(input, output, session) {
 
 ---
 
+# Extra: `shinydashboard` package
+https://rstudio.github.io/shinydashboard/
+
+
+---
+
 ## Learning outcomes {background-color="#FED9B7"}
 
 1.  Recognize the importance of user center design when developing a dashboard
@@ -618,39 +679,3 @@ server <- function(input, output, session) {
 
 
 ---
-
-
-![`Shinyalert` package](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
-![Shinyalert](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
----
-
-# UI Design
-
-## Don't Rush into Coding
-
-#### Prototyping is crucial
-
-> Prototyping first may help keep you from investing far too much time for marginal gains.
->
-> The Art of UNIX Programming (Raymond 2003) "Rule of Optimization: Prototype before polishing. Get it working before you optimize it."
-
-::: footer
-[Building an "ipsum-app" - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/building-ispum-app.html)
-:::
---
-
-
-
-------------------------------------------------------------------------
-
-## Boostrap grid system
-
-The Bootstrap grid has **twelve columns**, and [six responsive tiers](https://getbootstrap.com/docs/5.1/layout/grid/#grid-options) (allowing you to specify different behaviors on different screen sizes)
-
-```{r echo=FALSE, out.width=400, fig.align='center'}
-knitr::include_graphics("img/boostrap.png")
-```
-
-::: footer
-[`dash-bootstrap-components` documentation](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/) / [Video Charming data](https://www.youtube.com/watch?v=0mfIK8zxUds)
-:::
