@@ -22,7 +22,7 @@ format:
 
 ---
 
-##  🙌 Design UI references
+##  Design UI 
 **Engineering Production-Grade Shiny Apps**   
 
 Chapters:   
@@ -39,7 +39,7 @@ Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-
 
 ---
 
-## Today's goal
+## 🙌 Today's goal
 #### Design and build a Shiny app UI
 
 **Mastering Shiny**
@@ -53,7 +53,7 @@ Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-
 ![](img/532-overview-2023.png)
 
 
-# 1. Steps to create a production-grade app {background-color="#F1FFFA"}
+# Steps to create a production-grade app {background-color="#F1FFFA"}
 
 
 ---
@@ -70,7 +70,7 @@ These three properties impact two specific groups: **users and the developers**.
 
 
 :::footer
-Extracted from [Engineering Production-Grade Shiny Apps book](https://engineering-shiny.org/index.html#what-is-production)]
+Extracted from [Engineering Production-Grade Shiny Apps book](https://engineering-shiny.org/index.html#what-is-production)
 :::
 
 ---
@@ -80,7 +80,7 @@ Extracted from [Engineering Production-Grade Shiny Apps book](https://engineerin
 1. Motivation and purpose
 2. Select the results/metrics that you want for your target audience
 3. Choose presentation method and interactivity 
-4. Description of your app and sketch
+4. Design the app (sketch)
 5. Write the code of the app following a workflow
 6. Ensure the app's reproducibility and deploy it 
 
@@ -90,7 +90,7 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 :::
 
 
----
+
 
 # Why is user center design so important?{background-color="#F1FFFA"}
 
@@ -116,7 +116,7 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 1. Motivation and purpose
 2. Select the results/metrics that you want for your target audience
 3. Choose presentation method and interactivity 
-4. Description of your app and sketch
+4. Design the app (sketch)
 :::
 5. Write the code of the app following a workflow
 6. Ensure the app's reproducibility and deploy it 
@@ -127,10 +127,10 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 :::
 
 
----
 
 
-# **Step1**. Motivation and purpose  {background-color="#F1FFFA"}
+
+# **Step1**. Motivation and purpose  {background-color="#33cccc"}
 
 ---
 
@@ -179,7 +179,7 @@ A *persona* is a character that represents the “typical” behavior and traits
 ---
 
 ## Step 1. Motivation and purpose
-#### A. Get to know well your *Persona* (target audience)
+#### A. Get to know well your *Persona* 
 
 **Human center-design** 
 
@@ -250,20 +250,20 @@ Modified from: [Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effe
 
 - [Milestone 1](https://pages.github.ubc.ca/mds-2022-23/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html)
 
----
 
-# Step 2. Select the results/metrics that you want for your target audience{background-color="#F1FFFA"}
+
+# Step 2. Select the results/metrics that you want for your target audience{background-color="#33cccc"}
 
 ---
 
 ## Step 2. Select the results/metrics that you want for your target audience
 
 **Example 1: Business dashboard**  
-* "Percentage of completion of product"     
-* "Revenue increase (%) by year"     
+- "Percentage of completion of product"     
+- "Revenue increase (%) by year"     
 **Example 2: COVID-19 dashboard**  
-* "Number of daily COVID-19 cases by country"     
-* "Percentage of COVID-19 cases"     
+- "Number of daily COVID-19 cases by country"     
+- "Percentage of COVID-19 cases"     
 
 ::: footer
 Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
@@ -271,7 +271,7 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 
 
-# Step 3. Choose presentation method and interactivity{background-color="#F1FFFA"} 
+# Step 3. Choose presentation method and interactivity {background-color="#33cccc"} 
 
 ---
 
@@ -290,7 +290,18 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
   
 * "Percentage of completion of product" **-> Plot**  
   
-* "revenue increase (%) by year" **-> Plot**   
+* "Revenue increase (%) by year" **-> Plot**   
+ 
+---
+
+## Step 3. Choose presentation method and interactivity 
+#### A. Components 
+
+**Example 1: Business dashboard**  
+  
+* "Percentage of completion of product" **-> Plot**  (could be a text box)
+  
+* "Revenue increase (%) by year" **-> Plot**   (could be a text box)
  
 ---
 
@@ -301,18 +312,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
     
 * "Number of daily COVID-19 cases by country" **-> Map**  
   
-* "Percentage of COVID-19 cases" **-> Text box** 
+* "Percentage of hospitalizations" **-> Text box** 
 
----
 
-## Step 3. Choose presentation method and interactivity 
-#### A. Components 
-
-**Example 1: Business dashboard**  
-  
-* "Percentage of completion of product" **-> Plot**  (could be a text box)
-  
-* "revenue increase (%) by year" **-> Plot**   (could be a text box)
  
 ---
 
@@ -323,7 +325,7 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
   
 * "Number of daily COVID-19 cases by country" **-> Map**  (could be a table)
   
-* "Percentage of COVID-19 cases" **-> Text box** (could be part of a plot)
+* ""Percentage of hospitalizations" **-> Text box** (could be part of a plot)
 
 
 ---
@@ -333,8 +335,6 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 **What library to use to include...?**
   
 * Plots   
-
-* Gauges  
 
 * Alerts / Notifications
 
@@ -346,9 +346,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 ---
 
-## General recommendation
-- Good moment to check galleries of apps.
-- What can of widgets/libraries are available?
+# Recommendation
+👀 Check [Shiny app galleries](https://github.ubc.ca/MDS-2022-23/DSCI_532_viz-2_students/issues/1).
+
 
 
 ---
@@ -356,13 +356,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 ## Plots 
 #### Interactivity and animations
 
-- [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
-- [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
-
-:::footer
-You can also animate this way! [Example: Shiny MRI](https://haozhu233.shinyapps.io/shinyMRI-contest/?_ga=2.184446181.270431017.1676399074-1701640703.1675377384)
-:::
-
+- 👀 [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
+- 👀 [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
+You can also animate using Shiny! 👀 [Example: Shiny MRI](https://haozhu233.shinyapps.io/shinyMRI-contest/?_ga=2.184446181.270431017.1676399074-1701640703.1675377384)
 
 
 ---
@@ -371,7 +367,7 @@ You can also animate this way! [Example: Shiny MRI](https://haozhu233.shinyapps.
 #### `Plotly` in R?
 Yes, sure!
 
-- 📚  ![Interactive web-based data visualization with R, plotly, and shiny (2019) Carson Sievert](https://plotly-r.com/index.html)
+- 📚  [Interactive web-based data visualization with R, plotly, and shiny (2019) Carson Sievert](https://plotly-r.com/index.html)
 
 - With `plotly` you can create [maps](https://plotly-r.com/maps.html) AND interactive plots.
 
@@ -394,7 +390,7 @@ Yes, sure!
 ##### `htmlwidgets`
 Use JavaScript visualization libraries at the R console, just like plots
 
-http://gallery.htmlwidgets.org/
+- 👀🎨 [Gallery](http://gallery.htmlwidgets.org/)
 
 ---
 
@@ -402,8 +398,8 @@ http://gallery.htmlwidgets.org/
 #### Interactivity and animations
 
 
-⚠️ There are really nice libraries, but this doesn't mean that all the plots/visualizations should be interactive, some of them can be only **reactive**
-
+⚠️ There are really nice libraries, **but ** this doesn't mean that all the plots/visualizations should be interactive, some of them can be only **reactive**
+  
 You can create great visualizations with `ggplot2`!
 
 ---
@@ -412,20 +408,32 @@ You can create great visualizations with `ggplot2`!
 ##### `ggplot2`
 Don't forget that `ggplot2` has many extensions!
 
-- [`ggplot2` extensions gallery](https://exts.ggplot2.tidyverse.org/gallery/)
+- 👀🎨 [`ggplot2` extensions gallery](https://exts.ggplot2.tidyverse.org/gallery/)
 
-- [`sportyR`](https://sportyr.sportsdataverse.org/)
+- 👀 [One example: `sportyR` package](https://sportyr.sportsdataverse.org/)
+
+:::footer
+[NFL app example](https://dantok18.shinyapps.io/drive_expectations/)
+:::
 
 ---
 
 ## Maps
-Some libraries
-- `Leaflet`
-- `Plotly`
-- `ggplot2`
+  
+- `Leaflet` (Interactive)  
+- `Plotly`  (Interactive)
+- `ggplot2` + `sf`  
+there others...
 
-- [COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384)
 
+
+---
+
+## What we are going to learn in DSCI 532?
+
+- `lefleat` for maps
+- Some basic maps with `plotly`
+- `ggplot2` + `ggplotly()` from `plotly` library
 
 
 
@@ -446,11 +454,14 @@ Some libraries
 -   [Are components that can be collapsed / expanded?](https://rstudio.github.io/shinydashboard/)
 -   Titles, subtitles, labels
 
-> **Does the organization has a particular color and layout scheme desired for the dashboards?**
+
+:::footer
+**Does the organization has a particular color and layout scheme desired for the dashboards?**
+:::
 
 
+# **Step 4**. Design the app (sketch) {background-color="#33cccc"} 
 
-# **Step 4**. Description of your app and sketch {background-color="#F1FFFA"}
 
 
 ---
@@ -458,11 +469,10 @@ Some libraries
 ![](img/sketch.png)
 
 
----
+
 
 # App design: Some final messages
 
----
 
 # **Simplicity** is gold
 [Avoid the danger of feature-creep](https://engineering-shiny.org/ux-matters.html#the-danger-of-feature-creep)
@@ -482,19 +492,7 @@ Add labels, titles, notes for the users.
 [UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
 :::
 
----
 
-## Rule of Least Surprise
-
-> Rule of Least Surprise: In interface design, always do the least surprising thing.
->
-> The Art of UNIX Programming (Raymond 2003)
-
-::: footer
-[UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
-:::
-
---
 
 # Rule of Least Surprise
 
@@ -510,12 +508,12 @@ For example, **we expect an underline text to be clickable**, so there is a good
 
 ---
 
-# Questions? Break!
-
----
+# Questions? Break!{background-color="#1ca38a"}
 
 
-# 2. How to structure the UI of your Shiny app?  {background-color="#F1FFFA"}
+
+
+# 3. How to structure the UI of your Shiny app?  {background-color="#F1FFFA"}
 - [COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384)
 
 ---
@@ -586,8 +584,14 @@ ui <- navbarPage(
 
 # DEMO: Sidebar, tabs and navbar {background-color="#F1FFFA"}
 
+---
 
-# 3. How to add themes and style to your Shiny app? {background-color="#F1FFFA"}
+## Rainbow parentheses
+Tools -> Global options -> code -> display -> ✅rainbow parentheses 
+
+![](img/parentesis.png){fig-align='center'}
+
+# 4. How to add themes and style to your Shiny app? {background-color="#F1FFFA"}
 
 ---
 
@@ -631,32 +635,12 @@ theme <- bslib::bs_theme(
 `ggplot2` only:
 You can use `thematic` package adding `thematic_shiny()` 
 
-```r
-library(ggplot2)
-library(shiny)
 
-ui <- fluidPage(
-  theme = bslib::bs_theme(bootswatch = "darkly"),
-  titlePanel("A themed plot"),
-  plotOutput("plot"),
-)
-
-server <- function(input, output, session) {
-  thematic::thematic_shiny()
-  
-  output$plot <- renderPlot({
-    ggplot(mtcars, aes(wt, mpg)) +
-      geom_point() +
-      geom_smooth()
-  }, res = 96)
-}
-
-```
 
 ---
 
-# Extra: `shinydashboard` package
-https://rstudio.github.io/shinydashboard/
+# Extras
+`ggplotly()`
 
 
 ---
