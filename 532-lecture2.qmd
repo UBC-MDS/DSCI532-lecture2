@@ -640,6 +640,9 @@ You can use `thematic` package adding `thematic_shiny()`
 # Extras: `ggplotly()`
 Check code of the second live demo
 
+# Extras: tidyevaluation
+For using packages as `dplyr` and `ggplot2` in Shiny read Mastering Shiny Chapter 12
+
 ---
 
 ## Learning outcomes {background-color="#FED9B7"}
