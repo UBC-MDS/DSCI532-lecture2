@@ -60,8 +60,6 @@ Fay, C., Rochette, S., Guyader, V., & Girard, C. (2021). Engineering Production-
 
 ## 🛑🤔
 #### What is a “production-grade” app?
-These three properties impact two specific groups: **users and the developers**.
-
 * It is **used**, even if only by one person.
 
 * It is **relied** upon by its user(s).
@@ -78,7 +76,7 @@ Extracted from [Engineering Production-Grade Shiny Apps book](https://engineerin
 ## The road to a production-grade app
 
 1. Motivation and purpose
-2. Select the results/metrics that you want for your target audience
+2. Select the results/metrics based on your target audience
 3. Choose presentation method and interactivity 
 4. Design the app (sketch)
 5. Write the code of the app following a workflow
@@ -114,7 +112,7 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 
 :::{.fragment .highlight-blue}
 1. Motivation and purpose
-2. Select the results/metrics that you want for your target audience
+2. Select the results/metrics based on your target audience
 3. Choose presentation method and interactivity 
 4. Design the app (sketch)
 :::
@@ -134,9 +132,11 @@ Adapted from: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashb
 
 ---
 
-## Step 1. Motivation and purpose  
+## Step 1. Motivation and purpose 
+Define the target audience, research question and objective of the project.
+  
 **A.** Get to know well your *Persona*   
-**B.** Understand the the data.  
+**B.** Understand the the data  
 
 
 ---
@@ -245,25 +245,24 @@ Modified from: [Pappas, L., Whitman, L. (2011). Riding the Technology Wave: Effe
 
 ## Step 1. Motivation and purpose
 #### Milestone 1 checklist
-- `Proposal.md`
+Complete the `Proposal.md` file.
  
-
 - [Milestone 1](https://pages.github.ubc.ca/mds-2022-23/DSCI_532_viz-2_students/materials/release/milestone1/milestone1.html)
 
 
 
-# Step 2. Select the results/metrics that you want for your target audience{background-color="#33cccc"}
+# Step 2. Select the results/metrics based on your target audience{background-color="#33cccc"}
 
 ---
 
-## Step 2. Select the results/metrics that you want for your target audience
+## Step 2. Select the results/metrics based on your target audience
 
 **Example 1: Business dashboard**  
 - "Percentage of completion of product"     
 - "Revenue increase (%) by year"     
 **Example 2: COVID-19 dashboard**  
 - "Number of daily COVID-19 cases by country"     
-- "Percentage of COVID-19 cases"     
+- "Percentage of hospitalizations"     
 
 ::: footer
 Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboards: a visual catalog for design and deployment. John Wiley & Sons.
@@ -299,9 +298,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 **Example 1: Business dashboard**  
   
-* "Percentage of completion of product" **-> Plot**  (could be a text box)
+* "Percentage of completion of product" **-> Plot**  (text box???)
   
-* "Revenue increase (%) by year" **-> Plot**   (could be a text box)
+* "Revenue increase (%) by year" **-> Plot**   (text box???)
  
 ---
 
@@ -323,9 +322,9 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
  
 **Example 2: COVID-19 dashboard**
   
-* "Number of daily COVID-19 cases by country" **-> Map**  (could be a table)
+* "Number of daily COVID-19 cases by country" **-> Map**  (table???)
   
-* ""Percentage of hospitalizations" **-> Text box** (could be part of a plot)
+* "Percentage of hospitalizations" **-> Text box** (plot???)
 
 
 ---
@@ -344,10 +343,10 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 * Reports    
 
----
+
 
 # Recommendation
-👀 Check [Shiny app galleries](https://github.ubc.ca/MDS-2022-23/DSCI_532_viz-2_students/issues/1).
+👀 [Shiny app galleries](https://github.ubc.ca/MDS-2022-23/DSCI_532_viz-2_students/issues/1).
 
 
 
@@ -358,6 +357,7 @@ Based in: Rasmussen, N. H., Bansal, M., & Chen, C. Y. (2009). Business dashboard
 
 - 👀 [Interactive plots - the R graph Gallery](https://r-graph-gallery.com/interactive-charts.html)
 - 👀 [Animation plots - the R graph Gallery](https://r-graph-gallery.com/animation.html)
+   
 You can also animate using Shiny! 👀 [Example: Shiny MRI](https://haozhu233.shinyapps.io/shinyMRI-contest/?_ga=2.184446181.270431017.1676399074-1701640703.1675377384)
 
 
@@ -372,17 +372,6 @@ Yes, sure!
 - With `plotly` you can create [maps](https://plotly-r.com/maps.html) AND interactive plots.
 
 
-
----
-
-## Plots
-##### Thresholds / period selection
-
-![](img/example-plot-line.png){fig-align='center'}
-
-::: footer
-[`Customized Data Visualization in ggplot2` - Allison Horst](https://allisonhorst.github.io/eds221-day8-comp/data_viz.html)
-:::
 
 ---
 
@@ -442,9 +431,9 @@ there others...
   
 -   [Accesibility](https://engineering-shiny.org/ux-matters.html#making-your-app-accessible)  
 
--   [Themes](https://mastering-shiny.org/action-layout.html#themes), fonts and size   
+-   [Themes](https://mastering-shiny.org/action-layout.html#themes), fonts, colors  
 
--   Colors  
+-   Multi-page or single-page layout
 
 ---
 
@@ -506,7 +495,6 @@ For example, **we expect an underline text to be clickable**, so there is a good
 [UX-matters - Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/ux-matters.html)
 :::
 
----
 
 # Questions? Break!{background-color="#1ca38a"}
 
@@ -527,11 +515,15 @@ For example, **we expect an underline text to be clickable**, so there is a good
   - Tabsets 
   - Navbars
 
+:::footer
+[COVID-19 Tracker app](https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.52417641.1170288496.1676142911-1701640703.1675377384) - [BC COVID dashboard](https://experience.arcgis.com/experience/a6f23959a8b14bfa989e3cda29297ded)
+:::
+
 ---
 
 ## Layout functions
 
-![](img/layout.png)
+![](img/layout.png){.absolute width="750"}
 
 :::footer
 Shiny Cheat-sheet
@@ -542,7 +534,7 @@ Shiny Cheat-sheet
 ## Single page layout
 #### Structure of a basic app with a sidebar
 
-![](img/sidebar.png)
+![](img/sidebar.png){fig-align='center'}
 
 :::footer
 Mastering Shiny
@@ -562,23 +554,29 @@ Mastering Shiny
 Mastering Shiny
 :::
 
+
 ---
 
-## NavbarPage
+## Tabs
+##### A `tabsetPanel()` allows the user to select a single `tabPanel()` to view 
 
-```r
-ui <- navbarPage(
-  "Page title",   
-  tabPanel("panel 1", "one"),
-  tabPanel("panel 2", "two"),
-  tabPanel("panel 3", "three"),
-  navbarMenu("subpanels", 
-    tabPanel("panel 4a", "four-a"),
-    tabPanel("panel 4b", "four-b"),
-    tabPanel("panel 4c", "four-c")
-  )
-)
-```
+![](img/tabset.png){.absolute width="700"}
+
+:::footer
+Mastering Shiny
+:::
+
+---
+
+## Navbar
+##### A `navbarPage()` sets up a horizontal nav bar at the top of the page. 
+
+![](img/navbarpage.png){.absolute width="700" }
+
+
+:::footer
+Mastering Shiny
+:::
 
 
 
@@ -589,7 +587,7 @@ ui <- navbarPage(
 ## Rainbow parentheses
 Tools -> Global options -> code -> display -> ✅rainbow parentheses 
 
-![](img/parentesis.png){fig-align='center'}
+![](img/parentesis.png){.absolute width="500"  }
 
 # 4. How to add themes and style to your Shiny app? {background-color="#F1FFFA"}
 
@@ -637,11 +635,10 @@ You can use `thematic` package adding `thematic_shiny()`
 
 
 
----
 
-# Extras
-`ggplotly()`
 
+# Extras: `ggplotly()`
+Check code of the second live demo
 
 ---
 
@@ -659,7 +656,7 @@ You can use `thematic` package adding `thematic_shiny()`
 
 ---
 
-# Questions?
+# Questions?{background-color="#1ca38a"}
 
 
 ---
